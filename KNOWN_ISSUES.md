@@ -71,9 +71,55 @@ consult the Cloudant documentation for further information.
   ```
 
 ### Documents
-#### Cannot request all open revs
+#### Cannot request open revs
 
-* It is not currently possible to request `open_revs=all` when getting a document.
+* It is not possible to request `open_revs` when getting a document. Use the `_bulk_get` endpoint instead.
+
+  Workaround for `open_revs=all`:
+  ```java
+  BulkGetQueryDocument bulkGetQueryDocument = new BulkGetQueryDocument.Builder()
+          .id("docId").build();
+
+  PostBulkGetOptions postBulkGetOptions = new PostBulkGetOptions.Builder()
+          .db("dbName")
+          .docs(Arrays.asList(bulkGetQueryDocument)).build();
+
+  BulkGetResult bulkGetResult = client
+          .postBulkGet(postBulkGetOptions)
+          .execute()
+          .getResult();
+
+  List<BulkGetResultDocument> openRevs = bulkGetResult.getResults().get(0).getDocs();
+  ```
+  Workaround for `open_revs=["1-abc", "2-def"]`:
+  ```java
+  String id = "docId";
+
+  BulkGetQueryDocument bulkGetQueryDocument1 = new BulkGetQueryDocument.Builder()
+          .id(id)
+          .rev("1-abc")
+          .build();
+
+  BulkGetQueryDocument bulkGetQueryDocument2 = new BulkGetQueryDocument.Builder()
+          .id(id)
+          .rev("1-def")
+          .build();
+
+  PostBulkGetOptions postBulkGetOptions = new PostBulkGetOptions.Builder()
+          .db("dbName")
+          .docs(Arrays.asList(bulkGetQueryDocument1, bulkGetQueryDocument2)).build();
+
+  BulkGetResult bulkGetResult = client
+          .postBulkGet(postBulkGetOptions)
+          .execute()
+          .getResult();
+
+  List<BulkGetResultDocument> openRevs = new ArrayList<>();
+
+  bulkGetResult.getResults().stream().forEach(result -> {
+      openRevs.addAll(result.getDocs());
+  });
+  ```
 
 ### Search
 #### Analyzer definitions should be in object format

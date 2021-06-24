@@ -13,33 +13,36 @@
 
 package com.ibm.cloud.cloudant.v1.model;
 
-import com.ibm.cloud.cloudant.v1.model.Analyzer;
-import com.ibm.cloud.cloudant.v1.model.IndexDefinition;
-import com.ibm.cloud.cloudant.v1.model.IndexInformation;
-import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
+import com.ibm.cloud.cloudant.v1.model.TextIndexField;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the IndexInformation model.
+ * Unit test class for the TextIndexField model.
  */
-public class IndexInformationTest {
+public class TextIndexFieldTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
   @Test
-  public void testIndexInformation() throws Throwable {
-    IndexInformation indexInformationModel = new IndexInformation();
-    assertNull(indexInformationModel.getDdoc());
-    assertNull(indexInformationModel.getDef());
-    assertNull(indexInformationModel.getName());
-    assertNull(indexInformationModel.getType());
+  public void testTextIndexField() throws Throwable {
+    TextIndexField textIndexFieldModel = new TextIndexField.Builder()
+      .name("testString")
+      .type("boolean")
+      .build();
+    assertEquals(textIndexFieldModel.name(), "testString");
+    assertEquals(textIndexFieldModel.type(), "boolean");
+
+    String json = TestUtilities.serialize(textIndexFieldModel);
+
+    TextIndexField textIndexFieldModelNew = TestUtilities.deserialize(json, TextIndexField.class);
+    assertTrue(textIndexFieldModelNew instanceof TextIndexField);
+    assertEquals(textIndexFieldModelNew.name(), "testString");
+    assertEquals(textIndexFieldModelNew.type(), "boolean");
   }
 }

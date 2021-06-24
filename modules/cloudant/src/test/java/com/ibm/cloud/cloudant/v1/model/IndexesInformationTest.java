@@ -15,7 +15,6 @@ package com.ibm.cloud.cloudant.v1.model;
 
 import com.ibm.cloud.cloudant.v1.model.Analyzer;
 import com.ibm.cloud.cloudant.v1.model.IndexDefinition;
-import com.ibm.cloud.cloudant.v1.model.IndexField;
 import com.ibm.cloud.cloudant.v1.model.IndexInformation;
 import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
 import com.ibm.cloud.cloudant.v1.model.IndexesInformation;

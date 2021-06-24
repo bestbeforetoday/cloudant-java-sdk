@@ -14,8 +14,8 @@
 package com.ibm.cloud.cloudant.v1.model;
 
 import com.ibm.cloud.cloudant.v1.model.Analyzer;
-import com.ibm.cloud.cloudant.v1.model.IndexDefinition;
 import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
+import com.ibm.cloud.cloudant.v1.model.JsonIndexDefinition;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
 import java.io.InputStream;
@@ -27,14 +27,14 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the IndexDefinition model.
+ * Unit test class for the JsonIndexDefinition model.
  */
-public class IndexDefinitionTest {
+public class JsonIndexDefinitionTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
   @Test
-  public void testIndexDefinition() throws Throwable {
+  public void testJsonIndexDefinition() throws Throwable {
     Analyzer analyzerModel = new Analyzer.Builder()
       .name("classic")
       .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
@@ -49,23 +49,31 @@ public class IndexDefinitionTest {
     assertEquals(indexTextOperatorDefaultFieldModel.analyzer(), analyzerModel);
     assertEquals(indexTextOperatorDefaultFieldModel.enabled(), Boolean.valueOf(true));
 
-    IndexDefinition indexDefinitionModel = new IndexDefinition.Builder()
+    JsonIndexDefinition jsonIndexDefinitionModel = new JsonIndexDefinition.Builder()
       .defaultAnalyzer(analyzerModel)
       .defaultField(indexTextOperatorDefaultFieldModel)
       .indexArrayLengths(true)
       .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
+      .fields(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })
       .build();
-    assertEquals(indexDefinitionModel.defaultAnalyzer(), analyzerModel);
-    assertEquals(indexDefinitionModel.defaultField(), indexTextOperatorDefaultFieldModel);
-    assertEquals(indexDefinitionModel.indexArrayLengths(), Boolean.valueOf(true));
-    assertEquals(indexDefinitionModel.partialFilterSelector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(jsonIndexDefinitionModel.defaultAnalyzer(), analyzerModel);
+    assertEquals(jsonIndexDefinitionModel.defaultField(), indexTextOperatorDefaultFieldModel);
+    assertEquals(jsonIndexDefinitionModel.indexArrayLengths(), Boolean.valueOf(true));
+    assertEquals(jsonIndexDefinitionModel.partialFilterSelector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(jsonIndexDefinitionModel.fields(), new java.util.HashMap<String, String>() { { put("foo", "asc"); } });
 
-    String json = TestUtilities.serialize(indexDefinitionModel);
+    String json = TestUtilities.serialize(jsonIndexDefinitionModel);
 
-    IndexDefinition indexDefinitionModelNew = TestUtilities.deserialize(json, IndexDefinition.class);
-    assertTrue(indexDefinitionModelNew instanceof IndexDefinition);
-    assertEquals(indexDefinitionModelNew.defaultAnalyzer().toString(), analyzerModel.toString());
-    assertEquals(indexDefinitionModelNew.defaultField().toString(), indexTextOperatorDefaultFieldModel.toString());
-    assertEquals(indexDefinitionModelNew.indexArrayLengths(), Boolean.valueOf(true));
+    JsonIndexDefinition jsonIndexDefinitionModelNew = TestUtilities.deserialize(json, JsonIndexDefinition.class);
+    assertTrue(jsonIndexDefinitionModelNew instanceof JsonIndexDefinition);
+    assertEquals(jsonIndexDefinitionModelNew.defaultAnalyzer().toString(), analyzerModel.toString());
+    assertEquals(jsonIndexDefinitionModelNew.defaultField().toString(), indexTextOperatorDefaultFieldModel.toString());
+    assertEquals(jsonIndexDefinitionModelNew.indexArrayLengths(), Boolean.valueOf(true));
   }
+
+  @Test(expectedExceptions = IllegalArgumentException.class)
+  public void testJsonIndexDefinitionError() throws Throwable {
+    new JsonIndexDefinition.Builder().build();
+  }
+
 }

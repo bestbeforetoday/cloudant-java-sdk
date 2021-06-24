@@ -114,12 +114,13 @@ import com.ibm.cloud.cloudant.v1.model.HeadReplicationDocumentOptions;
 import com.ibm.cloud.cloudant.v1.model.HeadSchedulerDocumentOptions;
 import com.ibm.cloud.cloudant.v1.model.HeadSchedulerJobOptions;
 import com.ibm.cloud.cloudant.v1.model.HeadUpInformationOptions;
+import com.ibm.cloud.cloudant.v1.model.IndexConfigurationIndex;
 import com.ibm.cloud.cloudant.v1.model.IndexDefinition;
-import com.ibm.cloud.cloudant.v1.model.IndexField;
 import com.ibm.cloud.cloudant.v1.model.IndexInformation;
 import com.ibm.cloud.cloudant.v1.model.IndexResult;
 import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
 import com.ibm.cloud.cloudant.v1.model.IndexesInformation;
+import com.ibm.cloud.cloudant.v1.model.JsonIndexDefinition;
 import com.ibm.cloud.cloudant.v1.model.MembershipInformation;
 import com.ibm.cloud.cloudant.v1.model.MissingRevsResult;
 import com.ibm.cloud.cloudant.v1.model.Ok;
@@ -192,6 +193,8 @@ import com.ibm.cloud.cloudant.v1.model.ServerVendor;
 import com.ibm.cloud.cloudant.v1.model.SessionAuthentication;
 import com.ibm.cloud.cloudant.v1.model.SessionInformation;
 import com.ibm.cloud.cloudant.v1.model.ShardsInformation;
+import com.ibm.cloud.cloudant.v1.model.TextIndexDefinition;
+import com.ibm.cloud.cloudant.v1.model.TextIndexField;
 import com.ibm.cloud.cloudant.v1.model.ThroughputInformation;
 import com.ibm.cloud.cloudant.v1.model.UpInformation;
 import com.ibm.cloud.cloudant.v1.model.UserContext;
@@ -2163,7 +2166,16 @@ public class CloudantTest extends PowerMockTestCase {
     .rev("testString")
     .revisions(revisionsModel)
     .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
-    .add("foo", "testString")
+    .add("brand", "Foo")
+    .add("colours", ""["red","green","black","blue"]"")
+    .add("description", "Slim Colourful Design Electronic Cooking Appliance for ...")
+    .add("image", "assets/img/0gmsnghhew.jpg")
+    .add("keywords", ""["Foo","Scales","Weight","Digital","Kitchen"]"")
+    .add("name", "Digital Kitchen Scales")
+    .add("price", "14.99")
+    .add("productid", "1000042")
+    .add("taxonomy", ""["Home","Kitchen","Small Appliances"]"")
+    .add("type", "product")
     .build();
 
     // Construct an instance of the PutDocumentOptions model
@@ -2751,7 +2763,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("examplekey")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -2823,7 +2835,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("examplekey")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -3379,7 +3391,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("examplekey")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -3452,7 +3464,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("examplekey")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -3629,7 +3641,7 @@ public class CloudantTest extends PowerMockTestCase {
   @Test
   public void testPostExplainWOptions() throws Throwable {
     // Schedule some responses.
-    String mockResponseBody = "{\"dbname\": \"dbname\", \"fields\": [\"fields\"], \"index\": {\"ddoc\": \"ddoc\", \"def\": {\"default_analyzer\": {\"name\": \"classic\", \"stopwords\": [\"stopwords\"]}, \"default_field\": {\"analyzer\": {\"name\": \"classic\", \"stopwords\": [\"stopwords\"]}, \"enabled\": false}, \"fields\": [{\"name\": \"name\", \"type\": \"boolean\"}], \"index_array_lengths\": false, \"partial_filter_selector\": {\"mapKey\": \"anyValue\"}}, \"name\": \"name\", \"type\": \"json\"}, \"limit\": 0, \"opts\": {\"mapKey\": \"anyValue\"}, \"range\": {\"end_key\": [\"anyValue\"], \"start_key\": [\"anyValue\"]}, \"selector\": {\"mapKey\": \"anyValue\"}, \"skip\": 0}";
+    String mockResponseBody = "{\"dbname\": \"dbname\", \"fields\": [\"fields\"], \"index\": {\"ddoc\": \"ddoc\", \"def\": {\"default_analyzer\": {\"name\": \"classic\", \"stopwords\": [\"stopwords\"]}, \"default_field\": {\"analyzer\": {\"name\": \"classic\", \"stopwords\": [\"stopwords\"]}, \"enabled\": false}, \"index_array_lengths\": false, \"partial_filter_selector\": {\"mapKey\": \"anyValue\"}}, \"name\": \"name\", \"type\": \"json\"}, \"limit\": 0, \"opts\": {\"mapKey\": \"anyValue\"}, \"range\": {\"end_key\": [\"anyValue\"], \"start_key\": [\"anyValue\"]}, \"selector\": {\"mapKey\": \"anyValue\"}, \"skip\": 0}";
     String postExplainPath = "/testString/_explain";
 
     server.enqueue(new MockResponse()
@@ -3820,7 +3832,7 @@ public class CloudantTest extends PowerMockTestCase {
   @Test
   public void testGetIndexesInformationWOptions() throws Throwable {
     // Schedule some responses.
-    String mockResponseBody = "{\"total_rows\": 0, \"indexes\": [{\"ddoc\": \"ddoc\", \"def\": {\"default_analyzer\": {\"name\": \"classic\", \"stopwords\": [\"stopwords\"]}, \"default_field\": {\"analyzer\": {\"name\": \"classic\", \"stopwords\": [\"stopwords\"]}, \"enabled\": false}, \"fields\": [{\"name\": \"name\", \"type\": \"boolean\"}], \"index_array_lengths\": false, \"partial_filter_selector\": {\"mapKey\": \"anyValue\"}}, \"name\": \"name\", \"type\": \"json\"}]}";
+    String mockResponseBody = "{\"total_rows\": 0, \"indexes\": [{\"ddoc\": \"ddoc\", \"def\": {\"default_analyzer\": {\"name\": \"classic\", \"stopwords\": [\"stopwords\"]}, \"default_field\": {\"analyzer\": {\"name\": \"classic\", \"stopwords\": [\"stopwords\"]}, \"enabled\": false}, \"index_array_lengths\": false, \"partial_filter_selector\": {\"mapKey\": \"anyValue\"}}, \"name\": \"name\", \"type\": \"json\"}]}";
     String getIndexesInformationPath = "/testString/_index";
 
     server.enqueue(new MockResponse()
@@ -3892,18 +3904,19 @@ public class CloudantTest extends PowerMockTestCase {
     .enabled(true)
     .build();
 
-    // Construct an instance of the IndexField model
-    IndexField indexFieldModel = new IndexField.Builder()
-    .name("testString")
-    .type("boolean")
-    .add("foo", "asc")
+    // Construct an instance of the JsonIndexDefinition model
+    JsonIndexDefinition indexConfigurationIndexModel = new JsonIndexDefinition.Builder()
+    .defaultAnalyzer(analyzerModel)
+    .defaultField(indexTextOperatorDefaultFieldModel)
+    .indexArrayLengths(true)
+    .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
+    .fields(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })
     .build();
 
     // Construct an instance of the IndexDefinition model
     IndexDefinition indexDefinitionModel = new IndexDefinition.Builder()
     .defaultAnalyzer(analyzerModel)
     .defaultField(indexTextOperatorDefaultFieldModel)
-    .fields(new java.util.ArrayList<IndexField>(java.util.Arrays.asList(indexFieldModel)))
     .indexArrayLengths(true)
     .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .build();
@@ -3911,7 +3924,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostIndexOptions model
     PostIndexOptions postIndexOptionsModel = new PostIndexOptions.Builder()
     .db("testString")
-    .index(indexDefinitionModel)
+    .index(indexConfigurationIndexModel)
     .ddoc("testString")
     .def(indexDefinitionModel)
     .name("testString")
@@ -6048,7 +6061,16 @@ public class CloudantTest extends PowerMockTestCase {
     .rev("testString")
     .revisions(revisionsModel)
     .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
-    .add("foo", "testString")
+    .add("brand", "Foo")
+    .add("colours", ""["red","green","black","blue"]"")
+    .add("description", "Slim Colourful Design Electronic Cooking Appliance for ...")
+    .add("image", "assets/img/0gmsnghhew.jpg")
+    .add("keywords", ""["Foo","Scales","Weight","Digital","Kitchen"]"")
+    .add("name", "Digital Kitchen Scales")
+    .add("price", "14.99")
+    .add("productid", "1000042")
+    .add("taxonomy", ""["Home","Kitchen","Small Appliances"]"")
+    .add("type", "product")
     .build();
 
     // Construct an instance of the PutLocalDocumentOptions model

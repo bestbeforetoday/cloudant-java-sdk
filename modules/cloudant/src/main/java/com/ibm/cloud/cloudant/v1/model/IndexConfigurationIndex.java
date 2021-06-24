@@ -18,12 +18,21 @@ import com.google.gson.annotations.SerializedName;
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * Schema for a `json` or `text` query index definition. Indexes of type `text` have additional configuration properties
- * that do not apply to `json` indexes, these are:
- * * `default_analyzer` - the default text analyzer to use * `default_field` - whether to index the text in all document
- * fields and what analyzer to use for that purpose.
+ * IndexConfigurationIndex.
+ *
+ * Classes which extend this class:
+ * - JsonIndexDefinition
+ * - TextIndexDefinition
  */
-public class IndexDefinition extends GenericModel {
+public class IndexConfigurationIndex extends GenericModel {
+  @SuppressWarnings("unused")
+  protected static String discriminatorPropertyName = "type";
+  protected static java.util.Map<String, Class<?>> discriminatorMapping;
+  static {
+    discriminatorMapping = new java.util.HashMap<>();
+    discriminatorMapping.put("json", JsonIndexDefinition.class);
+    discriminatorMapping.put("text", TextIndexDefinition.class);
+  }
 
   @SerializedName("default_analyzer")
   protected Analyzer defaultAnalyzer;
@@ -33,97 +42,9 @@ public class IndexDefinition extends GenericModel {
   protected Boolean indexArrayLengths;
   @SerializedName("partial_filter_selector")
   protected Map<String, Object> partialFilterSelector;
+  protected Map<String, String> fields;
 
-  /**
-   * Builder.
-   */
-  public static class Builder {
-    private Analyzer defaultAnalyzer;
-    private IndexTextOperatorDefaultField defaultField;
-    private Boolean indexArrayLengths;
-    private Map<String, Object> partialFilterSelector;
-
-    private Builder(IndexDefinition indexDefinition) {
-      this.defaultAnalyzer = indexDefinition.defaultAnalyzer;
-      this.defaultField = indexDefinition.defaultField;
-      this.indexArrayLengths = indexDefinition.indexArrayLengths;
-      this.partialFilterSelector = indexDefinition.partialFilterSelector;
-    }
-
-    /**
-     * Instantiates a new builder.
-     */
-    public Builder() {
-    }
-
-    /**
-     * Builds a IndexDefinition.
-     *
-     * @return the new IndexDefinition instance
-     */
-    public IndexDefinition build() {
-      return new IndexDefinition(this);
-    }
-
-    /**
-     * Set the defaultAnalyzer.
-     *
-     * @param defaultAnalyzer the defaultAnalyzer
-     * @return the IndexDefinition builder
-     */
-    public Builder defaultAnalyzer(Analyzer defaultAnalyzer) {
-      this.defaultAnalyzer = defaultAnalyzer;
-      return this;
-    }
-
-    /**
-     * Set the defaultField.
-     *
-     * @param defaultField the defaultField
-     * @return the IndexDefinition builder
-     */
-    public Builder defaultField(IndexTextOperatorDefaultField defaultField) {
-      this.defaultField = defaultField;
-      return this;
-    }
-
-    /**
-     * Set the indexArrayLengths.
-     *
-     * @param indexArrayLengths the indexArrayLengths
-     * @return the IndexDefinition builder
-     */
-    public Builder indexArrayLengths(Boolean indexArrayLengths) {
-      this.indexArrayLengths = indexArrayLengths;
-      return this;
-    }
-
-    /**
-     * Set the partialFilterSelector.
-     *
-     * @param partialFilterSelector the partialFilterSelector
-     * @return the IndexDefinition builder
-     */
-    public Builder partialFilterSelector(Map<String, Object> partialFilterSelector) {
-      this.partialFilterSelector = partialFilterSelector;
-      return this;
-    }
-  }
-
-  protected IndexDefinition(Builder builder) {
-    defaultAnalyzer = builder.defaultAnalyzer;
-    defaultField = builder.defaultField;
-    indexArrayLengths = builder.indexArrayLengths;
-    partialFilterSelector = builder.partialFilterSelector;
-  }
-
-  /**
-   * New builder.
-   *
-   * @return a IndexDefinition builder
-   */
-  public Builder newBuilder() {
-    return new Builder(this);
+  protected IndexConfigurationIndex() {
   }
 
   /**
@@ -195,6 +116,15 @@ public class IndexDefinition extends GenericModel {
    */
   public Map<String, Object> partialFilterSelector() {
     return partialFilterSelector;
+  }
+
+  /**
+   * Gets the fields.
+   *
+   * @return the fields
+   */
+  public Map<String, String> fields() {
+    return fields;
   }
 }
 

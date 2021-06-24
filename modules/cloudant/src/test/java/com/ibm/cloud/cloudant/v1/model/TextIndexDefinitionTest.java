@@ -14,8 +14,9 @@
 package com.ibm.cloud.cloudant.v1.model;
 
 import com.ibm.cloud.cloudant.v1.model.Analyzer;
-import com.ibm.cloud.cloudant.v1.model.IndexDefinition;
 import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
+import com.ibm.cloud.cloudant.v1.model.TextIndexDefinition;
+import com.ibm.cloud.cloudant.v1.model.TextIndexField;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
 import java.io.InputStream;
@@ -27,14 +28,14 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the IndexDefinition model.
+ * Unit test class for the TextIndexDefinition model.
  */
-public class IndexDefinitionTest {
+public class TextIndexDefinitionTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
   @Test
-  public void testIndexDefinition() throws Throwable {
+  public void testTextIndexDefinition() throws Throwable {
     Analyzer analyzerModel = new Analyzer.Builder()
       .name("classic")
       .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
@@ -49,23 +50,39 @@ public class IndexDefinitionTest {
     assertEquals(indexTextOperatorDefaultFieldModel.analyzer(), analyzerModel);
     assertEquals(indexTextOperatorDefaultFieldModel.enabled(), Boolean.valueOf(true));
 
-    IndexDefinition indexDefinitionModel = new IndexDefinition.Builder()
+    TextIndexField textIndexFieldModel = new TextIndexField.Builder()
+      .name("testString")
+      .type("boolean")
+      .build();
+    assertEquals(textIndexFieldModel.name(), "testString");
+    assertEquals(textIndexFieldModel.type(), "boolean");
+
+    TextIndexDefinition textIndexDefinitionModel = new TextIndexDefinition.Builder()
       .defaultAnalyzer(analyzerModel)
       .defaultField(indexTextOperatorDefaultFieldModel)
       .indexArrayLengths(true)
       .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
+      .fields(textIndexFieldModel)
       .build();
-    assertEquals(indexDefinitionModel.defaultAnalyzer(), analyzerModel);
-    assertEquals(indexDefinitionModel.defaultField(), indexTextOperatorDefaultFieldModel);
-    assertEquals(indexDefinitionModel.indexArrayLengths(), Boolean.valueOf(true));
-    assertEquals(indexDefinitionModel.partialFilterSelector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(textIndexDefinitionModel.defaultAnalyzer(), analyzerModel);
+    assertEquals(textIndexDefinitionModel.defaultField(), indexTextOperatorDefaultFieldModel);
+    assertEquals(textIndexDefinitionModel.indexArrayLengths(), Boolean.valueOf(true));
+    assertEquals(textIndexDefinitionModel.partialFilterSelector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(textIndexDefinitionModel.fields(), textIndexFieldModel);
 
-    String json = TestUtilities.serialize(indexDefinitionModel);
+    String json = TestUtilities.serialize(textIndexDefinitionModel);
 
-    IndexDefinition indexDefinitionModelNew = TestUtilities.deserialize(json, IndexDefinition.class);
-    assertTrue(indexDefinitionModelNew instanceof IndexDefinition);
-    assertEquals(indexDefinitionModelNew.defaultAnalyzer().toString(), analyzerModel.toString());
-    assertEquals(indexDefinitionModelNew.defaultField().toString(), indexTextOperatorDefaultFieldModel.toString());
-    assertEquals(indexDefinitionModelNew.indexArrayLengths(), Boolean.valueOf(true));
+    TextIndexDefinition textIndexDefinitionModelNew = TestUtilities.deserialize(json, TextIndexDefinition.class);
+    assertTrue(textIndexDefinitionModelNew instanceof TextIndexDefinition);
+    assertEquals(textIndexDefinitionModelNew.defaultAnalyzer().toString(), analyzerModel.toString());
+    assertEquals(textIndexDefinitionModelNew.defaultField().toString(), indexTextOperatorDefaultFieldModel.toString());
+    assertEquals(textIndexDefinitionModelNew.indexArrayLengths(), Boolean.valueOf(true));
+    assertEquals(textIndexDefinitionModelNew.fields().toString(), textIndexFieldModel.toString());
   }
+
+  @Test(expectedExceptions = IllegalArgumentException.class)
+  public void testTextIndexDefinitionError() throws Throwable {
+    new TextIndexDefinition.Builder().build();
+  }
+
 }

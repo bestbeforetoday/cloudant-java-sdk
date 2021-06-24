@@ -32,7 +32,7 @@ public class PostIndexOptions extends GenericModel {
   }
 
   protected String db;
-  protected IndexDefinition index;
+  protected IndexConfigurationIndex index;
   protected String ddoc;
   protected IndexDefinition def;
   protected String name;
@@ -44,7 +44,7 @@ public class PostIndexOptions extends GenericModel {
    */
   public static class Builder {
     private String db;
-    private IndexDefinition index;
+    private IndexConfigurationIndex index;
     private String ddoc;
     private IndexDefinition def;
     private String name;
@@ -73,7 +73,7 @@ public class PostIndexOptions extends GenericModel {
      * @param db the db
      * @param index the index
      */
-    public Builder(String db, IndexDefinition index) {
+    public Builder(String db, IndexConfigurationIndex index) {
       this.db = db;
       this.index = index;
     }
@@ -104,7 +104,7 @@ public class PostIndexOptions extends GenericModel {
      * @param index the index
      * @return the PostIndexOptions builder
      */
-    public Builder index(IndexDefinition index) {
+    public Builder index(IndexConfigurationIndex index) {
       this.index = index;
       return this;
     }
@@ -202,14 +202,9 @@ public class PostIndexOptions extends GenericModel {
   /**
    * Gets the index.
    *
-   * Schema for a `json` or `text` query index definition. Indexes of type `text` have additional configuration
-   * properties that do not apply to `json` indexes, these are:
-   * * `default_analyzer` - the default text analyzer to use * `default_field` - whether to index the text in all
-   * document fields and what analyzer to use for that purpose.
-   *
    * @return the index
    */
-  public IndexDefinition index() {
+  public IndexConfigurationIndex index() {
     return index;
   }
 

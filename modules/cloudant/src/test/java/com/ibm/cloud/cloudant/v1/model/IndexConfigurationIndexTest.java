@@ -14,8 +14,7 @@
 package com.ibm.cloud.cloudant.v1.model;
 
 import com.ibm.cloud.cloudant.v1.model.Analyzer;
-import com.ibm.cloud.cloudant.v1.model.IndexDefinition;
-import com.ibm.cloud.cloudant.v1.model.IndexInformation;
+import com.ibm.cloud.cloudant.v1.model.IndexConfigurationIndex;
 import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
@@ -28,18 +27,16 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the IndexInformation model.
+ * Unit test class for the IndexConfigurationIndex model.
  */
-public class IndexInformationTest {
+public class IndexConfigurationIndexTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
+  // TODO: Add tests for models that are abstract
   @Test
-  public void testIndexInformation() throws Throwable {
-    IndexInformation indexInformationModel = new IndexInformation();
-    assertNull(indexInformationModel.getDdoc());
-    assertNull(indexInformationModel.getDef());
-    assertNull(indexInformationModel.getName());
-    assertNull(indexInformationModel.getType());
+  public void testIndexConfigurationIndex() throws Throwable {
+    IndexConfigurationIndex indexConfigurationIndexModel = new IndexConfigurationIndex();
+    assertNotNull(indexConfigurationIndexModel);
   }
 }

@@ -15,8 +15,8 @@ package com.ibm.cloud.cloudant.v1.model;
 
 import com.ibm.cloud.cloudant.v1.model.Analyzer;
 import com.ibm.cloud.cloudant.v1.model.IndexDefinition;
-import com.ibm.cloud.cloudant.v1.model.IndexField;
 import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
+import com.ibm.cloud.cloudant.v1.model.JsonIndexDefinition;
 import com.ibm.cloud.cloudant.v1.model.PostIndexOptions;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
@@ -51,31 +51,33 @@ public class PostIndexOptionsTest {
     assertEquals(indexTextOperatorDefaultFieldModel.analyzer(), analyzerModel);
     assertEquals(indexTextOperatorDefaultFieldModel.enabled(), Boolean.valueOf(true));
 
-    IndexField indexFieldModel = new IndexField.Builder()
-      .name("testString")
-      .type("boolean")
-      .add("foo", "asc")
+    JsonIndexDefinition indexConfigurationIndexModel = new JsonIndexDefinition.Builder()
+      .defaultAnalyzer(analyzerModel)
+      .defaultField(indexTextOperatorDefaultFieldModel)
+      .indexArrayLengths(true)
+      .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
+      .fields(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })
       .build();
-    assertEquals(indexFieldModel.getName(), "testString");
-    assertEquals(indexFieldModel.getType(), "boolean");
-    assertEquals(indexFieldModel.get("foo"), "asc");
+    assertEquals(indexConfigurationIndexModel.defaultAnalyzer(), analyzerModel);
+    assertEquals(indexConfigurationIndexModel.defaultField(), indexTextOperatorDefaultFieldModel);
+    assertEquals(indexConfigurationIndexModel.indexArrayLengths(), Boolean.valueOf(true));
+    assertEquals(indexConfigurationIndexModel.partialFilterSelector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(indexConfigurationIndexModel.fields(), new java.util.HashMap<String, String>() { { put("foo", "asc"); } });
 
     IndexDefinition indexDefinitionModel = new IndexDefinition.Builder()
       .defaultAnalyzer(analyzerModel)
       .defaultField(indexTextOperatorDefaultFieldModel)
-      .fields(new java.util.ArrayList<IndexField>(java.util.Arrays.asList(indexFieldModel)))
       .indexArrayLengths(true)
       .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
       .build();
     assertEquals(indexDefinitionModel.defaultAnalyzer(), analyzerModel);
     assertEquals(indexDefinitionModel.defaultField(), indexTextOperatorDefaultFieldModel);
-    assertEquals(indexDefinitionModel.fields(), new java.util.ArrayList<IndexField>(java.util.Arrays.asList(indexFieldModel)));
     assertEquals(indexDefinitionModel.indexArrayLengths(), Boolean.valueOf(true));
     assertEquals(indexDefinitionModel.partialFilterSelector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
 
     PostIndexOptions postIndexOptionsModel = new PostIndexOptions.Builder()
       .db("testString")
-      .index(indexDefinitionModel)
+      .index(indexConfigurationIndexModel)
       .ddoc("testString")
       .def(indexDefinitionModel)
       .name("testString")
@@ -83,7 +85,7 @@ public class PostIndexOptionsTest {
       .type("json")
       .build();
     assertEquals(postIndexOptionsModel.db(), "testString");
-    assertEquals(postIndexOptionsModel.index(), indexDefinitionModel);
+    assertEquals(postIndexOptionsModel.index(), indexConfigurationIndexModel);
     assertEquals(postIndexOptionsModel.ddoc(), "testString");
     assertEquals(postIndexOptionsModel.def(), indexDefinitionModel);
     assertEquals(postIndexOptionsModel.name(), "testString");

@@ -12,7 +12,7 @@
  */
 
 /*
- * IBM OpenAPI SDK Code Generator Version: 3.30.0-bd714324-20210406-200538
+ * IBM OpenAPI SDK Code Generator Version: 3.33.0-caf29bd0-20210603-225214
  */
 
 package com.ibm.cloud.cloudant.v1;
@@ -147,13 +147,13 @@ import com.ibm.cloud.cloudant.v1.model.UpInformation;
 import com.ibm.cloud.cloudant.v1.model.UuidsResult;
 import com.ibm.cloud.cloudant.v1.model.ViewQueriesResult;
 import com.ibm.cloud.cloudant.v1.model.ViewResult;
-import com.ibm.cloud.cloudant.common.SdkCommon;
+import com.ibm.cloud.common.SdkCommon;
 import com.ibm.cloud.sdk.core.http.RequestBuilder;
 import com.ibm.cloud.sdk.core.http.ResponseConverter;
 import com.ibm.cloud.sdk.core.http.ServiceCall;
 import com.ibm.cloud.sdk.core.security.Authenticator;
-
-
+import com.ibm.cloud.sdk.core.security.ConfigBasedAuthenticatorFactory;
+import com.ibm.cloud.sdk.core.service.BaseService;
 import com.ibm.cloud.sdk.core.util.RequestUtils;
 import com.ibm.cloud.sdk.core.util.ResponseConverterUtils;
 import java.io.InputStream;
@@ -168,7 +168,7 @@ import java.util.Map.Entry;
  * @version v1
  * @see <a href="https://cloud.ibm.com/docs/services/Cloudant/">Cloudant</a>
  */
-public class Cloudant extends com.ibm.cloud.cloudant.internal.CloudantBaseService {
+public class Cloudant extends BaseService {
 
   public static final String DEFAULT_SERVICE_NAME = "cloudant";
 
@@ -192,7 +192,7 @@ public class Cloudant extends com.ibm.cloud.cloudant.internal.CloudantBaseServic
    * @return an instance of the `Cloudant` client using external configuration
    */
   public static Cloudant newInstance(String serviceName) {
-    Authenticator authenticator = com.ibm.cloud.cloudant.internal.DelegatingAuthenticatorFactory.getAuthenticator(serviceName);
+    Authenticator authenticator = ConfigBasedAuthenticatorFactory.getAuthenticator(serviceName);
     Cloudant service = new Cloudant(serviceName, authenticator);
     service.configureService(serviceName);
     return service;

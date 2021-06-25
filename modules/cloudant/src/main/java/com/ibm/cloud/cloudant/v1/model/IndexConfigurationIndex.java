@@ -42,7 +42,7 @@ public class IndexConfigurationIndex extends GenericModel {
   protected Boolean indexArrayLengths;
   @SerializedName("partial_filter_selector")
   protected Map<String, Object> partialFilterSelector;
-  protected Map<String, String> fields;
+  protected Object fields;
 
   protected IndexConfigurationIndex() {
   }
@@ -123,7 +123,7 @@ public class IndexConfigurationIndex extends GenericModel {
    *
    * @return the fields
    */
-  public Map<String, String> fields() {
+  public Object fields() {
     return fields;
   }
 }

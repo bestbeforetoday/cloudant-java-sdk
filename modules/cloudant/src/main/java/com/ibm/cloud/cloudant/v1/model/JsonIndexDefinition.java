@@ -38,7 +38,7 @@ public class JsonIndexDefinition extends IndexConfigurationIndex {
       this.defaultField = jsonIndexDefinition.defaultField;
       this.indexArrayLengths = jsonIndexDefinition.indexArrayLengths;
       this.partialFilterSelector = jsonIndexDefinition.partialFilterSelector;
-      this.fields = jsonIndexDefinition.fields;
+      this.fields = (Map<String, String>) jsonIndexDefinition.fields;
     }
 
     /**

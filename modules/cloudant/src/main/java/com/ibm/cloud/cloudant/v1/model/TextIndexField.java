@@ -117,5 +117,10 @@ public class TextIndexField extends GenericModel {
   public String type() {
     return type;
   }
+
+  @Override
+  public String toString() {
+    return "{name=" + name + ", type=" + type + "}";
+  }
 }
 

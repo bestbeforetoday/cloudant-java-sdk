@@ -38,7 +38,7 @@ public class TextIndexDefinition extends IndexConfigurationIndex {
       this.defaultField = textIndexDefinition.defaultField;
       this.indexArrayLengths = textIndexDefinition.indexArrayLengths;
       this.partialFilterSelector = textIndexDefinition.partialFilterSelector;
-      this.fields = textIndexDefinition.fields;
+      this.fields = (TextIndexField) textIndexDefinition.fields;
     }
 
     /**

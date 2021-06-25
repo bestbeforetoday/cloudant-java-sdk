@@ -16,8 +16,8 @@ package com.ibm.cloud.cloudant.v1.model;
 import com.ibm.cloud.cloudant.v1.model.Analyzer;
 import com.ibm.cloud.cloudant.v1.model.ExplainResult;
 import com.ibm.cloud.cloudant.v1.model.ExplainResultRange;
-import com.ibm.cloud.cloudant.v1.model.IndexDefinition;
-import com.ibm.cloud.cloudant.v1.model.IndexInformation;
+import com.ibm.cloud.cloudant.v1.model.IndexDefinitionJson;
+import com.ibm.cloud.cloudant.v1.model.IndexInformationJson;
 import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 

@@ -49,7 +49,7 @@ public class PostViewQueriesOptionsTest {
       .group(true)
       .groupLevel(Long.valueOf("1"))
       .key("testString")
-      .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
+      .keys(new ArrayList<Object>(Arrays.asList("testString")))
       .reduce(true)
       .stable(true)
       .startkey("testString")
@@ -70,7 +70,7 @@ public class PostViewQueriesOptionsTest {
     assertEquals(viewQueryModel.group(), Boolean.valueOf(true));
     assertEquals(viewQueryModel.groupLevel(), Long.valueOf("1"));
     assertEquals(viewQueryModel.key(), "testString");
-    assertEquals(viewQueryModel.keys(), new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")));
+    assertEquals(viewQueryModel.keys(), new ArrayList<Object>(Arrays.asList("testString")));
     assertEquals(viewQueryModel.reduce(), Boolean.valueOf(true));
     assertEquals(viewQueryModel.stable(), Boolean.valueOf(true));
     assertEquals(viewQueryModel.startkey(), "testString");
@@ -81,12 +81,12 @@ public class PostViewQueriesOptionsTest {
       .db("testString")
       .ddoc("testString")
       .view("testString")
-      .queries(new java.util.ArrayList<ViewQuery>(java.util.Arrays.asList(viewQueryModel)))
+      .queries(new ArrayList<ViewQuery>(Arrays.asList(viewQueryModel)))
       .build();
     assertEquals(postViewQueriesOptionsModel.db(), "testString");
     assertEquals(postViewQueriesOptionsModel.ddoc(), "testString");
     assertEquals(postViewQueriesOptionsModel.view(), "testString");
-    assertEquals(postViewQueriesOptionsModel.queries(), new java.util.ArrayList<ViewQuery>(java.util.Arrays.asList(viewQueryModel)));
+    assertEquals(postViewQueriesOptionsModel.queries(), new ArrayList<ViewQuery>(Arrays.asList(viewQueryModel)));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

@@ -46,7 +46,7 @@ public class PostAllDocsQueriesOptionsTest {
       .updateSeq(true)
       .endkey("testString")
       .key("testString")
-      .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .keys(new ArrayList<String>(Arrays.asList("testString")))
       .startkey("testString")
       .build();
     assertEquals(allDocsQueryModel.attEncodingInfo(), Boolean.valueOf(true));
@@ -60,15 +60,15 @@ public class PostAllDocsQueriesOptionsTest {
     assertEquals(allDocsQueryModel.updateSeq(), Boolean.valueOf(true));
     assertEquals(allDocsQueryModel.endkey(), "testString");
     assertEquals(allDocsQueryModel.key(), "testString");
-    assertEquals(allDocsQueryModel.keys(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(allDocsQueryModel.keys(), new ArrayList<String>(Arrays.asList("testString")));
     assertEquals(allDocsQueryModel.startkey(), "testString");
 
     PostAllDocsQueriesOptions postAllDocsQueriesOptionsModel = new PostAllDocsQueriesOptions.Builder()
       .db("testString")
-      .queries(new java.util.ArrayList<AllDocsQuery>(java.util.Arrays.asList(allDocsQueryModel)))
+      .queries(new ArrayList<AllDocsQuery>(Arrays.asList(allDocsQueryModel)))
       .build();
     assertEquals(postAllDocsQueriesOptionsModel.db(), "testString");
-    assertEquals(postAllDocsQueriesOptionsModel.queries(), new java.util.ArrayList<AllDocsQuery>(java.util.Arrays.asList(allDocsQueryModel)));
+    assertEquals(postAllDocsQueriesOptionsModel.queries(), new ArrayList<AllDocsQuery>(Arrays.asList(allDocsQueryModel)));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

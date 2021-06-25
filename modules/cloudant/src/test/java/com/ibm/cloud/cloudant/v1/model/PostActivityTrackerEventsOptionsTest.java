@@ -34,9 +34,9 @@ public class PostActivityTrackerEventsOptionsTest {
   @Test
   public void testPostActivityTrackerEventsOptions() throws Throwable {
     PostActivityTrackerEventsOptions postActivityTrackerEventsOptionsModel = new PostActivityTrackerEventsOptions.Builder()
-      .types(new java.util.ArrayList<String>(java.util.Arrays.asList("management")))
+      .types(new ArrayList<String>(Arrays.asList("management")))
       .build();
-    assertEquals(postActivityTrackerEventsOptionsModel.types(), new java.util.ArrayList<String>(java.util.Arrays.asList("management")));
+    assertEquals(postActivityTrackerEventsOptionsModel.types(), new ArrayList<String>(Arrays.asList("management")));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

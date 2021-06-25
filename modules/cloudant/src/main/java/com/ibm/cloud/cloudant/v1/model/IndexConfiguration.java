@@ -15,14 +15,13 @@ package com.ibm.cloud.cloudant.v1.model;
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * Schema for information about the indexes in a database.
+ * Schema for configuration options for creating an index.
  *
  * Classes which extend this class:
- * - IndexInformationJson
- * - IndexInformationSpecial
- * - IndexInformationText
+ * - IndexConfigurationJson
+ * - TextIndexConfiguration
  */
-public class IndexInformation extends GenericModel {
+public class IndexConfiguration extends GenericModel {
 
   /**
    * Schema for the type of an index.
@@ -39,10 +38,9 @@ public class IndexInformation extends GenericModel {
   protected String ddoc;
   protected String name;
   protected String type;
-  protected IndexDefinitionJson def;
-  protected Boolean partitioned;
+  protected Object index;
 
-  protected IndexInformation() {
+  protected IndexConfiguration() {
   }
 
   /**
@@ -52,7 +50,7 @@ public class IndexInformation extends GenericModel {
    *
    * @return the ddoc
    */
-  public String getDdoc() {
+  public String ddoc() {
     return ddoc;
   }
 
@@ -63,7 +61,7 @@ public class IndexInformation extends GenericModel {
    *
    * @return the name
    */
-  public String getName() {
+  public String name() {
     return name;
   }
 
@@ -74,34 +72,22 @@ public class IndexInformation extends GenericModel {
    *
    * @return the type
    */
-  public String getType() {
+  public String type() {
     return type;
   }
 
   /**
-   * Gets the def.
+   * Gets the index.
    *
    * Schema for a `json` or `text` query index definition. Indexes of type `text` have additional configuration
    * properties that do not apply to `json` indexes, these are:
    * * `default_analyzer` - the default text analyzer to use * `default_field` - whether to index the text in all
    * document fields and what analyzer to use for that purpose.
    *
-   * @return the def
+   * @return the index
    */
-  public IndexDefinitionJson getDef() {
-    return def;
-  }
-
-  /**
-   * Gets the partitioned.
-   *
-   * The default value is `true` for databases with `partitioned: true` and `false` otherwise. For databases with
-   * `partitioned: false` if this option is specified the value must be `false`.
-   *
-   * @return the partitioned
-   */
-  public Boolean isPartitioned() {
-    return partitioned;
+  public Object index() {
+    return index;
   }
 }
 

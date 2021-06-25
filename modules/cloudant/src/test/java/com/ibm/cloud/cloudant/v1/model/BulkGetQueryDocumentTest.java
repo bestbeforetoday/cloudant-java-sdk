@@ -34,11 +34,11 @@ public class BulkGetQueryDocumentTest {
   @Test
   public void testBulkGetQueryDocument() throws Throwable {
     BulkGetQueryDocument bulkGetQueryDocumentModel = new BulkGetQueryDocument.Builder()
-      .attsSince(new java.util.ArrayList<String>(java.util.Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
+      .attsSince(new ArrayList<String>(Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
       .id("testString")
       .rev("testString")
       .build();
-    assertEquals(bulkGetQueryDocumentModel.attsSince(), new java.util.ArrayList<String>(java.util.Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")));
+    assertEquals(bulkGetQueryDocumentModel.attsSince(), new ArrayList<String>(Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")));
     assertEquals(bulkGetQueryDocumentModel.id(), "testString");
     assertEquals(bulkGetQueryDocumentModel.rev(), "testString");
 

@@ -36,10 +36,10 @@ public class IndexTextOperatorDefaultFieldTest {
   public void testIndexTextOperatorDefaultField() throws Throwable {
     Analyzer analyzerModel = new Analyzer.Builder()
       .name("classic")
-      .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .stopwords(new ArrayList<String>(Arrays.asList("testString")))
       .build();
     assertEquals(analyzerModel.name(), "classic");
-    assertEquals(analyzerModel.stopwords(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(analyzerModel.stopwords(), new ArrayList<String>(Arrays.asList("testString")));
 
     IndexTextOperatorDefaultField indexTextOperatorDefaultFieldModel = new IndexTextOperatorDefaultField.Builder()
       .analyzer(analyzerModel)

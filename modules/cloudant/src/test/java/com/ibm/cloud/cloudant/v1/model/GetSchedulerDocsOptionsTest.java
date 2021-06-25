@@ -36,10 +36,10 @@ public class GetSchedulerDocsOptionsTest {
     GetSchedulerDocsOptions getSchedulerDocsOptionsModel = new GetSchedulerDocsOptions.Builder()
       .limit(Long.valueOf("0"))
       .skip(Long.valueOf("0"))
-      .states(new java.util.ArrayList<String>(java.util.Arrays.asList("initializing")))
+      .states(new ArrayList<String>(Arrays.asList("initializing")))
       .build();
     assertEquals(getSchedulerDocsOptionsModel.limit(), Long.valueOf("0"));
     assertEquals(getSchedulerDocsOptionsModel.skip(), Long.valueOf("0"));
-    assertEquals(getSchedulerDocsOptionsModel.states(), new java.util.ArrayList<String>(java.util.Arrays.asList("initializing")));
+    assertEquals(getSchedulerDocsOptionsModel.states(), new ArrayList<String>(Arrays.asList("initializing")));
   }
 }

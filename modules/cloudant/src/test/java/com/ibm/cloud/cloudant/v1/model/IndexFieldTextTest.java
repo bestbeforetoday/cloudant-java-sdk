@@ -13,30 +13,36 @@
 
 package com.ibm.cloud.cloudant.v1.model;
 
-import com.ibm.cloud.cloudant.v1.model.Analyzer;
-import com.ibm.cloud.cloudant.v1.model.IndexConfigurationIndex;
-import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
+import com.ibm.cloud.cloudant.v1.model.IndexFieldText;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the IndexConfigurationIndex model.
+ * Unit test class for the IndexFieldText model.
  */
-public class IndexConfigurationIndexTest {
+public class IndexFieldTextTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
-  // TODO: Add tests for models that are abstract
   @Test
-  public void testIndexConfigurationIndex() throws Throwable {
-    IndexConfigurationIndex indexConfigurationIndexModel = new IndexConfigurationIndex();
-    assertNotNull(indexConfigurationIndexModel);
+  public void testIndexFieldText() throws Throwable {
+    IndexFieldText indexFieldTextModel = new IndexFieldText.Builder()
+      .name("testString")
+      .type("boolean")
+      .build();
+    assertEquals(indexFieldTextModel.name(), "testString");
+    assertEquals(indexFieldTextModel.type(), "boolean");
+
+    String json = TestUtilities.serialize(indexFieldTextModel);
+
+    IndexFieldText indexFieldTextModelNew = TestUtilities.deserialize(json, IndexFieldText.class);
+    assertTrue(indexFieldTextModelNew instanceof IndexFieldText);
+    assertEquals(indexFieldTextModelNew.name(), "testString");
+    assertEquals(indexFieldTextModelNew.type(), "boolean");
   }
 }

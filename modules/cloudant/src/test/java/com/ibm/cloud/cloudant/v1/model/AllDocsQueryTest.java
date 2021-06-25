@@ -45,7 +45,7 @@ public class AllDocsQueryTest {
       .updateSeq(true)
       .endkey("testString")
       .key("testString")
-      .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .keys(new ArrayList<String>(Arrays.asList("testString")))
       .startkey("testString")
       .build();
     assertEquals(allDocsQueryModel.attEncodingInfo(), Boolean.valueOf(true));
@@ -59,7 +59,7 @@ public class AllDocsQueryTest {
     assertEquals(allDocsQueryModel.updateSeq(), Boolean.valueOf(true));
     assertEquals(allDocsQueryModel.endkey(), "testString");
     assertEquals(allDocsQueryModel.key(), "testString");
-    assertEquals(allDocsQueryModel.keys(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(allDocsQueryModel.keys(), new ArrayList<String>(Arrays.asList("testString")));
     assertEquals(allDocsQueryModel.startkey(), "testString");
 
     String json = TestUtilities.serialize(allDocsQueryModel);

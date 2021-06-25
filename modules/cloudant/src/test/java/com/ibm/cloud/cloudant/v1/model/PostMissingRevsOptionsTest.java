@@ -33,10 +33,10 @@ public class PostMissingRevsOptionsTest {
   public void testPostMissingRevsOptions() throws Throwable {
     PostMissingRevsOptions postMissingRevsOptionsModel = new PostMissingRevsOptions.Builder()
       .db("testString")
-      .documentRevisions(new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("testString"))); } })
+      .documentRevisions(new HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("testString"))); } })
       .build();
     assertEquals(postMissingRevsOptionsModel.db(), "testString");
-    assertEquals(postMissingRevsOptionsModel.documentRevisions(), new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("testString"))); } });
+    assertEquals(postMissingRevsOptionsModel.documentRevisions(), new HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("testString"))); } });
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

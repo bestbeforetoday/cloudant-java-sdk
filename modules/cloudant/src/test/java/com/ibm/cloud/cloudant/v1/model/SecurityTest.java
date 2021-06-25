@@ -35,21 +35,21 @@ public class SecurityTest {
   @Test
   public void testSecurity() throws Throwable {
     SecurityObject securityObjectModel = new SecurityObject.Builder()
-      .names(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
-      .roles(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .names(new ArrayList<String>(Arrays.asList("testString")))
+      .roles(new ArrayList<String>(Arrays.asList("testString")))
       .build();
-    assertEquals(securityObjectModel.names(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
-    assertEquals(securityObjectModel.roles(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(securityObjectModel.names(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(securityObjectModel.roles(), new ArrayList<String>(Arrays.asList("testString")));
 
     Security securityModel = new Security.Builder()
       .admins(securityObjectModel)
       .members(securityObjectModel)
-      .cloudant(new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("_reader"))); } })
+      .cloudant(new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("_reader"))); } })
       .couchdbAuthOnly(true)
       .build();
     assertEquals(securityModel.admins(), securityObjectModel);
     assertEquals(securityModel.members(), securityObjectModel);
-    assertEquals(securityModel.cloudant(), new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("_reader"))); } });
+    assertEquals(securityModel.cloudant(), new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("_reader"))); } });
     assertEquals(securityModel.couchdbAuthOnly(), Boolean.valueOf(true));
 
     String json = TestUtilities.serialize(securityModel);

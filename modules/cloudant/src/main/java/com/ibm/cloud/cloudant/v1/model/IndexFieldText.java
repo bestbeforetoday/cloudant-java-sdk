@@ -15,9 +15,9 @@ package com.ibm.cloud.cloudant.v1.model;
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * TextIndexField.
+ * Schema for indexed fields for use with declarative JSON query.
  */
-public class TextIndexField extends GenericModel {
+public class IndexFieldText extends GenericModel {
 
   /**
    * The type of the named field.
@@ -41,9 +41,9 @@ public class TextIndexField extends GenericModel {
     private String name;
     private String type;
 
-    private Builder(TextIndexField textIndexField) {
-      this.name = textIndexField.name;
-      this.type = textIndexField.type;
+    private Builder(IndexFieldText indexFieldText) {
+      this.name = indexFieldText.name;
+      this.type = indexFieldText.type;
     }
 
     /**
@@ -53,19 +53,19 @@ public class TextIndexField extends GenericModel {
     }
 
     /**
-     * Builds a TextIndexField.
+     * Builds a IndexFieldText.
      *
-     * @return the new TextIndexField instance
+     * @return the new IndexFieldText instance
      */
-    public TextIndexField build() {
-      return new TextIndexField(this);
+    public IndexFieldText build() {
+      return new IndexFieldText(this);
     }
 
     /**
      * Set the name.
      *
      * @param name the name
-     * @return the TextIndexField builder
+     * @return the IndexFieldText builder
      */
     public Builder name(String name) {
       this.name = name;
@@ -76,7 +76,7 @@ public class TextIndexField extends GenericModel {
      * Set the type.
      *
      * @param type the type
-     * @return the TextIndexField builder
+     * @return the IndexFieldText builder
      */
     public Builder type(String type) {
       this.type = type;
@@ -84,7 +84,7 @@ public class TextIndexField extends GenericModel {
     }
   }
 
-  protected TextIndexField(Builder builder) {
+  protected IndexFieldText(Builder builder) {
     name = builder.name;
     type = builder.type;
   }
@@ -92,7 +92,7 @@ public class TextIndexField extends GenericModel {
   /**
    * New builder.
    *
-   * @return a TextIndexField builder
+   * @return a IndexFieldText builder
    */
   public Builder newBuilder() {
     return new Builder(this);
@@ -100,6 +100,8 @@ public class TextIndexField extends GenericModel {
 
   /**
    * Gets the name.
+   *
+   * Name of the field.
    *
    * @return the name
    */
@@ -116,11 +118,6 @@ public class TextIndexField extends GenericModel {
    */
   public String type() {
     return type;
-  }
-
-  @Override
-  public String toString() {
-    return "{name=" + name + ", type=" + type + "}";
   }
 }
 

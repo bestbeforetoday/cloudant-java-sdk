@@ -35,24 +35,24 @@ public class PostBulkGetOptionsTest {
   @Test
   public void testPostBulkGetOptions() throws Throwable {
     BulkGetQueryDocument bulkGetQueryDocumentModel = new BulkGetQueryDocument.Builder()
-      .attsSince(new java.util.ArrayList<String>(java.util.Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
+      .attsSince(new ArrayList<String>(Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
       .id("testString")
       .rev("testString")
       .build();
-    assertEquals(bulkGetQueryDocumentModel.attsSince(), new java.util.ArrayList<String>(java.util.Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")));
+    assertEquals(bulkGetQueryDocumentModel.attsSince(), new ArrayList<String>(Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")));
     assertEquals(bulkGetQueryDocumentModel.id(), "testString");
     assertEquals(bulkGetQueryDocumentModel.rev(), "testString");
 
     PostBulkGetOptions postBulkGetOptionsModel = new PostBulkGetOptions.Builder()
       .db("testString")
-      .docs(new java.util.ArrayList<BulkGetQueryDocument>(java.util.Arrays.asList(bulkGetQueryDocumentModel)))
+      .docs(new ArrayList<BulkGetQueryDocument>(Arrays.asList(bulkGetQueryDocumentModel)))
       .attachments(true)
       .attEncodingInfo(true)
       .latest(true)
       .revs(true)
       .build();
     assertEquals(postBulkGetOptionsModel.db(), "testString");
-    assertEquals(postBulkGetOptionsModel.docs(), new java.util.ArrayList<BulkGetQueryDocument>(java.util.Arrays.asList(bulkGetQueryDocumentModel)));
+    assertEquals(postBulkGetOptionsModel.docs(), new ArrayList<BulkGetQueryDocument>(Arrays.asList(bulkGetQueryDocumentModel)));
     assertEquals(postBulkGetOptionsModel.attachments(), Boolean.valueOf(true));
     assertEquals(postBulkGetOptionsModel.attEncodingInfo(), Boolean.valueOf(true));
     assertEquals(postBulkGetOptionsModel.latest(), Boolean.valueOf(true));

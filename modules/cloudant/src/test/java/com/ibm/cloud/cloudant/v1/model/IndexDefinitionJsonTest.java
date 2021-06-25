@@ -14,8 +14,8 @@
 package com.ibm.cloud.cloudant.v1.model;
 
 import com.ibm.cloud.cloudant.v1.model.Analyzer;
+import com.ibm.cloud.cloudant.v1.model.IndexDefinitionJson;
 import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
-import com.ibm.cloud.cloudant.v1.model.JsonIndexDefinition;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
 import java.io.InputStream;
@@ -23,24 +23,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the JsonIndexDefinition model.
+ * Unit test class for the IndexDefinitionJson model.
  */
-public class JsonIndexDefinitionTest {
+public class IndexDefinitionJsonTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
   @Test
-  public void testJsonIndexDefinition() throws Throwable {
+  public void testIndexDefinitionJson() throws Throwable {
     Analyzer analyzerModel = new Analyzer.Builder()
       .name("classic")
-      .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .stopwords(new ArrayList<String>(Arrays.asList("testString")))
       .build();
     assertEquals(analyzerModel.name(), "classic");
-    assertEquals(analyzerModel.stopwords(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(analyzerModel.stopwords(), new ArrayList<String>(Arrays.asList("testString")));
 
     IndexTextOperatorDefaultField indexTextOperatorDefaultFieldModel = new IndexTextOperatorDefaultField.Builder()
       .analyzer(analyzerModel)
@@ -49,31 +50,31 @@ public class JsonIndexDefinitionTest {
     assertEquals(indexTextOperatorDefaultFieldModel.analyzer(), analyzerModel);
     assertEquals(indexTextOperatorDefaultFieldModel.enabled(), Boolean.valueOf(true));
 
-    JsonIndexDefinition jsonIndexDefinitionModel = new JsonIndexDefinition.Builder()
+    IndexDefinitionJson indexDefinitionJsonModel = new IndexDefinitionJson.Builder()
       .defaultAnalyzer(analyzerModel)
       .defaultField(indexTextOperatorDefaultFieldModel)
       .indexArrayLengths(true)
-      .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
-      .fields(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })
+      .partialFilterSelector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+      .fields(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
       .build();
-    assertEquals(jsonIndexDefinitionModel.defaultAnalyzer(), analyzerModel);
-    assertEquals(jsonIndexDefinitionModel.defaultField(), indexTextOperatorDefaultFieldModel);
-    assertEquals(jsonIndexDefinitionModel.indexArrayLengths(), Boolean.valueOf(true));
-    assertEquals(jsonIndexDefinitionModel.partialFilterSelector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
-    assertEquals(jsonIndexDefinitionModel.fields(), new java.util.HashMap<String, String>() { { put("foo", "asc"); } });
+    assertEquals(indexDefinitionJsonModel.defaultAnalyzer(), analyzerModel);
+    assertEquals(indexDefinitionJsonModel.defaultField(), indexTextOperatorDefaultFieldModel);
+    assertEquals(indexDefinitionJsonModel.indexArrayLengths(), Boolean.valueOf(true));
+    assertEquals(indexDefinitionJsonModel.partialFilterSelector(), new HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(indexDefinitionJsonModel.fields(), new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })));
 
-    String json = TestUtilities.serialize(jsonIndexDefinitionModel);
+    String json = TestUtilities.serialize(indexDefinitionJsonModel);
 
-    JsonIndexDefinition jsonIndexDefinitionModelNew = TestUtilities.deserialize(json, JsonIndexDefinition.class);
-    assertTrue(jsonIndexDefinitionModelNew instanceof JsonIndexDefinition);
-    assertEquals(jsonIndexDefinitionModelNew.defaultAnalyzer().toString(), analyzerModel.toString());
-    assertEquals(jsonIndexDefinitionModelNew.defaultField().toString(), indexTextOperatorDefaultFieldModel.toString());
-    assertEquals(jsonIndexDefinitionModelNew.indexArrayLengths(), Boolean.valueOf(true));
+    IndexDefinitionJson indexDefinitionJsonModelNew = TestUtilities.deserialize(json, IndexDefinitionJson.class);
+    assertTrue(indexDefinitionJsonModelNew instanceof IndexDefinitionJson);
+    assertEquals(indexDefinitionJsonModelNew.defaultAnalyzer().toString(), analyzerModel.toString());
+    assertEquals(indexDefinitionJsonModelNew.defaultField().toString(), indexTextOperatorDefaultFieldModel.toString());
+    assertEquals(indexDefinitionJsonModelNew.indexArrayLengths(), Boolean.valueOf(true));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)
-  public void testJsonIndexDefinitionError() throws Throwable {
-    new JsonIndexDefinition.Builder().build();
+  public void testIndexDefinitionJsonError() throws Throwable {
+    new IndexDefinitionJson.Builder().build();
   }
 
 }

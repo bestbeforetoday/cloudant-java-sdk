@@ -56,7 +56,7 @@ public class ExplainResult extends GenericModel {
   /**
    * Gets the index.
    *
-   * Schema for information about an index.
+   * Schema for information about the indexes in a database.
    *
    * @return the index
    */

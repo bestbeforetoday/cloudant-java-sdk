@@ -19,46 +19,19 @@ import com.ibm.cloud.sdk.core.service.model.GenericModel;
  */
 public class PostIndexOptions extends GenericModel {
 
-  /**
-   * Schema for the type of an index.
-   */
-  public interface Type {
-    /** json. */
-    String JSON = "json";
-    /** special. */
-    String SPECIAL = "special";
-    /** text. */
-    String TEXT = "text";
-  }
-
   protected String db;
-  protected IndexConfigurationIndex index;
-  protected String ddoc;
-  protected IndexDefinition def;
-  protected String name;
-  protected Boolean partitioned;
-  protected String type;
+  protected IndexConfiguration indexConfiguration;
 
   /**
    * Builder.
    */
   public static class Builder {
     private String db;
-    private IndexConfigurationIndex index;
-    private String ddoc;
-    private IndexDefinition def;
-    private String name;
-    private Boolean partitioned;
-    private String type;
+    private IndexConfiguration indexConfiguration;
 
     private Builder(PostIndexOptions postIndexOptions) {
       this.db = postIndexOptions.db;
-      this.index = postIndexOptions.index;
-      this.ddoc = postIndexOptions.ddoc;
-      this.def = postIndexOptions.def;
-      this.name = postIndexOptions.name;
-      this.partitioned = postIndexOptions.partitioned;
-      this.type = postIndexOptions.type;
+      this.indexConfiguration = postIndexOptions.indexConfiguration;
     }
 
     /**
@@ -71,11 +44,11 @@ public class PostIndexOptions extends GenericModel {
      * Instantiates a new builder with required properties.
      *
      * @param db the db
-     * @param index the index
+     * @param indexConfiguration the indexConfiguration
      */
-    public Builder(String db, IndexConfigurationIndex index) {
+    public Builder(String db, IndexConfiguration indexConfiguration) {
       this.db = db;
-      this.index = index;
+      this.indexConfiguration = indexConfiguration;
     }
 
     /**
@@ -99,68 +72,13 @@ public class PostIndexOptions extends GenericModel {
     }
 
     /**
-     * Set the index.
+     * Set the indexConfiguration.
      *
-     * @param index the index
+     * @param indexConfiguration the indexConfiguration
      * @return the PostIndexOptions builder
      */
-    public Builder index(IndexConfigurationIndex index) {
-      this.index = index;
-      return this;
-    }
-
-    /**
-     * Set the ddoc.
-     *
-     * @param ddoc the ddoc
-     * @return the PostIndexOptions builder
-     */
-    public Builder ddoc(String ddoc) {
-      this.ddoc = ddoc;
-      return this;
-    }
-
-    /**
-     * Set the def.
-     *
-     * @param def the def
-     * @return the PostIndexOptions builder
-     */
-    public Builder def(IndexDefinition def) {
-      this.def = def;
-      return this;
-    }
-
-    /**
-     * Set the name.
-     *
-     * @param name the name
-     * @return the PostIndexOptions builder
-     */
-    public Builder name(String name) {
-      this.name = name;
-      return this;
-    }
-
-    /**
-     * Set the partitioned.
-     *
-     * @param partitioned the partitioned
-     * @return the PostIndexOptions builder
-     */
-    public Builder partitioned(Boolean partitioned) {
-      this.partitioned = partitioned;
-      return this;
-    }
-
-    /**
-     * Set the type.
-     *
-     * @param type the type
-     * @return the PostIndexOptions builder
-     */
-    public Builder type(String type) {
-      this.type = type;
+    public Builder indexConfiguration(IndexConfiguration indexConfiguration) {
+      this.indexConfiguration = indexConfiguration;
       return this;
     }
   }
@@ -168,15 +86,10 @@ public class PostIndexOptions extends GenericModel {
   protected PostIndexOptions(Builder builder) {
     com.ibm.cloud.sdk.core.util.Validator.notEmpty(builder.db,
       "db cannot be empty");
-    com.ibm.cloud.sdk.core.util.Validator.notNull(builder.index,
-      "index cannot be null");
+    com.ibm.cloud.sdk.core.util.Validator.notNull(builder.indexConfiguration,
+      "indexConfiguration cannot be null");
     db = builder.db;
-    index = builder.index;
-    ddoc = builder.ddoc;
-    def = builder.def;
-    name = builder.name;
-    partitioned = builder.partitioned;
-    type = builder.type;
+    indexConfiguration = builder.indexConfiguration;
   }
 
   /**
@@ -200,71 +113,14 @@ public class PostIndexOptions extends GenericModel {
   }
 
   /**
-   * Gets the index.
+   * Gets the indexConfiguration.
    *
-   * @return the index
+   * HTTP request body for postIndex.
+   *
+   * @return the indexConfiguration
    */
-  public IndexConfigurationIndex index() {
-    return index;
-  }
-
-  /**
-   * Gets the ddoc.
-   *
-   * Name of the design document in which the index will be created.
-   *
-   * @return the ddoc
-   */
-  public String ddoc() {
-    return ddoc;
-  }
-
-  /**
-   * Gets the def.
-   *
-   * Schema for a `json` or `text` query index definition. Indexes of type `text` have additional configuration
-   * properties that do not apply to `json` indexes, these are:
-   * * `default_analyzer` - the default text analyzer to use * `default_field` - whether to index the text in all
-   * document fields and what analyzer to use for that purpose.
-   *
-   * @return the def
-   */
-  public IndexDefinition def() {
-    return def;
-  }
-
-  /**
-   * Gets the name.
-   *
-   * name.
-   *
-   * @return the name
-   */
-  public String name() {
-    return name;
-  }
-
-  /**
-   * Gets the partitioned.
-   *
-   * The default value is `true` for databases with `partitioned: true` and `false` otherwise. For databases with
-   * `partitioned: false` if this option is specified the value must be `false`.
-   *
-   * @return the partitioned
-   */
-  public Boolean partitioned() {
-    return partitioned;
-  }
-
-  /**
-   * Gets the type.
-   *
-   * Schema for the type of an index.
-   *
-   * @return the type
-   */
-  public String type() {
-    return type;
+  public IndexConfiguration indexConfiguration() {
+    return indexConfiguration;
   }
 }
 

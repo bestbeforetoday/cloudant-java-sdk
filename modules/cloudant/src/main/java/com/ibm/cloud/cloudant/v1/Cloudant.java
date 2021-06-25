@@ -152,8 +152,6 @@ import com.ibm.cloud.sdk.core.http.RequestBuilder;
 import com.ibm.cloud.sdk.core.http.ResponseConverter;
 import com.ibm.cloud.sdk.core.http.ServiceCall;
 import com.ibm.cloud.sdk.core.security.Authenticator;
-//import com.ibm.cloud.sdk.core.security.ConfigBasedAuthenticatorFactory;
-//import com.ibm.cloud.sdk.core.service.BaseService;
 import com.ibm.cloud.sdk.core.util.RequestUtils;
 import com.ibm.cloud.sdk.core.util.ResponseConverterUtils;
 import java.io.InputStream;
@@ -2873,24 +2871,7 @@ public class Cloudant extends com.ibm.cloud.cloudant.internal.CloudantBaseServic
       builder.header(header.getKey(), header.getValue());
     }
     builder.header("Accept", "application/json");
-    final JsonObject contentJson = new JsonObject();
-    contentJson.add("index", com.ibm.cloud.sdk.core.util.GsonSingleton.getGson().toJsonTree(postIndexOptions.index()));
-    if (postIndexOptions.ddoc() != null) {
-      contentJson.addProperty("ddoc", postIndexOptions.ddoc());
-    }
-    if (postIndexOptions.def() != null) {
-      contentJson.add("def", com.ibm.cloud.sdk.core.util.GsonSingleton.getGson().toJsonTree(postIndexOptions.def()));
-    }
-    if (postIndexOptions.name() != null) {
-      contentJson.addProperty("name", postIndexOptions.name());
-    }
-    if (postIndexOptions.partitioned() != null) {
-      contentJson.addProperty("partitioned", postIndexOptions.partitioned());
-    }
-    if (postIndexOptions.type() != null) {
-      contentJson.addProperty("type", postIndexOptions.type());
-    }
-    builder.bodyJson(contentJson);
+    builder.bodyContent(com.ibm.cloud.sdk.core.util.GsonSingleton.getGsonWithoutPrettyPrinting().toJson(postIndexOptions.indexConfiguration()), "application/json");
     ResponseConverter<IndexResult> responseConverter =
       ResponseConverterUtils.getValue(new com.google.gson.reflect.TypeToken<IndexResult>() { }.getType());
     return createServiceCall(builder.build(), responseConverter);

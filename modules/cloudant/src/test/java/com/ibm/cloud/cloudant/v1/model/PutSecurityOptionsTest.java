@@ -35,23 +35,23 @@ public class PutSecurityOptionsTest {
   @Test
   public void testPutSecurityOptions() throws Throwable {
     SecurityObject securityObjectModel = new SecurityObject.Builder()
-      .names(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
-      .roles(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .names(new ArrayList<String>(Arrays.asList("testString")))
+      .roles(new ArrayList<String>(Arrays.asList("testString")))
       .build();
-    assertEquals(securityObjectModel.names(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
-    assertEquals(securityObjectModel.roles(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(securityObjectModel.names(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(securityObjectModel.roles(), new ArrayList<String>(Arrays.asList("testString")));
 
     PutSecurityOptions putSecurityOptionsModel = new PutSecurityOptions.Builder()
       .db("testString")
       .admins(securityObjectModel)
       .members(securityObjectModel)
-      .cloudant(new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("_reader"))); } })
+      .cloudant(new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("_reader"))); } })
       .couchdbAuthOnly(true)
       .build();
     assertEquals(putSecurityOptionsModel.db(), "testString");
     assertEquals(putSecurityOptionsModel.admins(), securityObjectModel);
     assertEquals(putSecurityOptionsModel.members(), securityObjectModel);
-    assertEquals(putSecurityOptionsModel.cloudant(), new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("_reader"))); } });
+    assertEquals(putSecurityOptionsModel.cloudant(), new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("_reader"))); } });
     assertEquals(putSecurityOptionsModel.couchdbAuthOnly(), Boolean.valueOf(true));
   }
 

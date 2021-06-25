@@ -40,44 +40,44 @@ public class PostSearchOptionsTest {
       .index("testString")
       .query("testString")
       .bookmark("testString")
-      .highlightFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .highlightFields(new ArrayList<String>(Arrays.asList("testString")))
       .highlightNumber(Long.valueOf("1"))
       .highlightPostTag("testString")
       .highlightPreTag("testString")
       .highlightSize(Long.valueOf("1"))
       .includeDocs(true)
-      .includeFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .includeFields(new ArrayList<String>(Arrays.asList("testString")))
       .limit(Long.valueOf("0"))
-      .sort(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .sort(new ArrayList<String>(Arrays.asList("testString")))
       .stale("ok")
-      .counts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
-      .drilldown(new java.util.ArrayList<List<String>>(java.util.Arrays.asList(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))))
+      .counts(new ArrayList<String>(Arrays.asList("testString")))
+      .drilldown(new ArrayList<List<String>>(Arrays.asList(new ArrayList<String>(Arrays.asList("testString")))))
       .groupField("testString")
       .groupLimit(Long.valueOf("1"))
-      .groupSort(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
-      .ranges(new java.util.HashMap<String, Map<String, Map<String, String>>>() { { put("foo", new java.util.HashMap<String, Map<String, String>>() { { put("foo", new java.util.HashMap<String, String>() { { put("foo", "testString"); } }); } }); } })
+      .groupSort(new ArrayList<String>(Arrays.asList("testString")))
+      .ranges(new HashMap<String, Map<String, Map<String, String>>>() { { put("foo", new HashMap<String, Map<String, String>>() { { put("foo", new HashMap<String, String>() { { put("foo", "testString"); } }); } }); } })
       .build();
     assertEquals(postSearchOptionsModel.db(), "testString");
     assertEquals(postSearchOptionsModel.ddoc(), "testString");
     assertEquals(postSearchOptionsModel.index(), "testString");
     assertEquals(postSearchOptionsModel.query(), "testString");
     assertEquals(postSearchOptionsModel.bookmark(), "testString");
-    assertEquals(postSearchOptionsModel.highlightFields(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(postSearchOptionsModel.highlightFields(), new ArrayList<String>(Arrays.asList("testString")));
     assertEquals(postSearchOptionsModel.highlightNumber(), Long.valueOf("1"));
     assertEquals(postSearchOptionsModel.highlightPostTag(), "testString");
     assertEquals(postSearchOptionsModel.highlightPreTag(), "testString");
     assertEquals(postSearchOptionsModel.highlightSize(), Long.valueOf("1"));
     assertEquals(postSearchOptionsModel.includeDocs(), Boolean.valueOf(true));
-    assertEquals(postSearchOptionsModel.includeFields(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(postSearchOptionsModel.includeFields(), new ArrayList<String>(Arrays.asList("testString")));
     assertEquals(postSearchOptionsModel.limit(), Long.valueOf("0"));
-    assertEquals(postSearchOptionsModel.sort(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(postSearchOptionsModel.sort(), new ArrayList<String>(Arrays.asList("testString")));
     assertEquals(postSearchOptionsModel.stale(), "ok");
-    assertEquals(postSearchOptionsModel.counts(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
-    assertEquals(postSearchOptionsModel.drilldown(), new java.util.ArrayList<List<String>>(java.util.Arrays.asList(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))));
+    assertEquals(postSearchOptionsModel.counts(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postSearchOptionsModel.drilldown(), new ArrayList<List<String>>(Arrays.asList(new ArrayList<String>(Arrays.asList("testString")))));
     assertEquals(postSearchOptionsModel.groupField(), "testString");
     assertEquals(postSearchOptionsModel.groupLimit(), Long.valueOf("1"));
-    assertEquals(postSearchOptionsModel.groupSort(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
-    assertEquals(postSearchOptionsModel.ranges(), new java.util.HashMap<String, Map<String, Map<String, String>>>() { { put("foo", new java.util.HashMap<String, Map<String, String>>() { { put("foo", new java.util.HashMap<String, String>() { { put("foo", "testString"); } }); } }); } });
+    assertEquals(postSearchOptionsModel.groupSort(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postSearchOptionsModel.ranges(), new HashMap<String, Map<String, Map<String, String>>>() { { put("foo", new HashMap<String, Map<String, String>>() { { put("foo", new HashMap<String, String>() { { put("foo", "testString"); } }); } }); } });
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

@@ -47,7 +47,7 @@ public class PostDesignDocsOptionsTest {
       .updateSeq(true)
       .endkey("testString")
       .key("testString")
-      .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .keys(new ArrayList<String>(Arrays.asList("testString")))
       .startkey("testString")
       .build();
     assertEquals(postDesignDocsOptionsModel.db(), "testString");
@@ -63,7 +63,7 @@ public class PostDesignDocsOptionsTest {
     assertEquals(postDesignDocsOptionsModel.updateSeq(), Boolean.valueOf(true));
     assertEquals(postDesignDocsOptionsModel.endkey(), "testString");
     assertEquals(postDesignDocsOptionsModel.key(), "testString");
-    assertEquals(postDesignDocsOptionsModel.keys(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(postDesignDocsOptionsModel.keys(), new ArrayList<String>(Arrays.asList("testString")));
     assertEquals(postDesignDocsOptionsModel.startkey(), "testString");
   }
 

@@ -48,7 +48,7 @@ public class ViewQueryTest {
       .group(true)
       .groupLevel(Long.valueOf("1"))
       .key("testString")
-      .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
+      .keys(new ArrayList<Object>(Arrays.asList("testString")))
       .reduce(true)
       .stable(true)
       .startkey("testString")
@@ -69,7 +69,7 @@ public class ViewQueryTest {
     assertEquals(viewQueryModel.group(), Boolean.valueOf(true));
     assertEquals(viewQueryModel.groupLevel(), Long.valueOf("1"));
     assertEquals(viewQueryModel.key(), "testString");
-    assertEquals(viewQueryModel.keys(), new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")));
+    assertEquals(viewQueryModel.keys(), new ArrayList<Object>(Arrays.asList("testString")));
     assertEquals(viewQueryModel.reduce(), Boolean.valueOf(true));
     assertEquals(viewQueryModel.stable(), Boolean.valueOf(true));
     assertEquals(viewQueryModel.startkey(), "testString");

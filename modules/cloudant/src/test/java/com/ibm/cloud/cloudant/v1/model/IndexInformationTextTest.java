@@ -14,8 +14,9 @@
 package com.ibm.cloud.cloudant.v1.model;
 
 import com.ibm.cloud.cloudant.v1.model.Analyzer;
-import com.ibm.cloud.cloudant.v1.model.IndexDefinitionJson;
-import com.ibm.cloud.cloudant.v1.model.IndexInformation;
+import com.ibm.cloud.cloudant.v1.model.IndexDefinitionText;
+import com.ibm.cloud.cloudant.v1.model.IndexFieldText;
+import com.ibm.cloud.cloudant.v1.model.IndexInformationText;
 import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
@@ -24,21 +25,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the IndexInformation model.
+ * Unit test class for the IndexInformationText model.
  */
-public class IndexInformationTest {
+public class IndexInformationTextTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
-  // TODO: Add tests for models that are abstract
   @Test
-  public void testIndexInformation() throws Throwable {
-    IndexInformation indexInformationModel = new IndexInformation();
-    assertNotNull(indexInformationModel);
+  public void testIndexInformationText() throws Throwable {
+    IndexInformationText indexInformationTextModel = new IndexInformationText();
+    assertNull(indexInformationTextModel.getDdoc());
+    assertNull(indexInformationTextModel.getName());
+    assertNull(indexInformationTextModel.getType());
+    assertNull(indexInformationTextModel.getDef());
   }
 }

@@ -12,6 +12,8 @@
  */
 package com.ibm.cloud.cloudant.v1.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.annotations.SerializedName;
@@ -23,7 +25,7 @@ import com.ibm.cloud.sdk.core.service.model.GenericModel;
  * * `default_analyzer` - the default text analyzer to use * `default_field` - whether to index the text in all document
  * fields and what analyzer to use for that purpose.
  */
-public class IndexDefinition extends GenericModel {
+public class IndexDefinitionJson extends GenericModel {
 
   @SerializedName("default_analyzer")
   protected Analyzer defaultAnalyzer;
@@ -33,6 +35,7 @@ public class IndexDefinition extends GenericModel {
   protected Boolean indexArrayLengths;
   @SerializedName("partial_filter_selector")
   protected Map<String, Object> partialFilterSelector;
+  protected List<Map<String, String>> fields;
 
   /**
    * Builder.
@@ -42,12 +45,14 @@ public class IndexDefinition extends GenericModel {
     private IndexTextOperatorDefaultField defaultField;
     private Boolean indexArrayLengths;
     private Map<String, Object> partialFilterSelector;
+    private List<Map<String, String>> fields;
 
-    private Builder(IndexDefinition indexDefinition) {
-      this.defaultAnalyzer = indexDefinition.defaultAnalyzer;
-      this.defaultField = indexDefinition.defaultField;
-      this.indexArrayLengths = indexDefinition.indexArrayLengths;
-      this.partialFilterSelector = indexDefinition.partialFilterSelector;
+    private Builder(IndexDefinitionJson indexDefinitionJson) {
+      this.defaultAnalyzer = indexDefinitionJson.defaultAnalyzer;
+      this.defaultField = indexDefinitionJson.defaultField;
+      this.indexArrayLengths = indexDefinitionJson.indexArrayLengths;
+      this.partialFilterSelector = indexDefinitionJson.partialFilterSelector;
+      this.fields = indexDefinitionJson.fields;
     }
 
     /**
@@ -57,19 +62,44 @@ public class IndexDefinition extends GenericModel {
     }
 
     /**
-     * Builds a IndexDefinition.
+     * Instantiates a new builder with required properties.
      *
-     * @return the new IndexDefinition instance
+     * @param fields the fields
      */
-    public IndexDefinition build() {
-      return new IndexDefinition(this);
+    public Builder(List<Map<String, String>> fields) {
+      this.fields = fields;
+    }
+
+    /**
+     * Builds a IndexDefinitionJson.
+     *
+     * @return the new IndexDefinitionJson instance
+     */
+    public IndexDefinitionJson build() {
+      return new IndexDefinitionJson(this);
+    }
+
+    /**
+     * Adds an fields to fields.
+     *
+     * @param fields the new fields
+     * @return the IndexDefinitionJson builder
+     */
+    public Builder addFields(Map<String, String> fields) {
+      com.ibm.cloud.sdk.core.util.Validator.notNull(fields,
+        "fields cannot be null");
+      if (this.fields == null) {
+        this.fields = new ArrayList<Map<String, String>>();
+      }
+      this.fields.add(fields);
+      return this;
     }
 
     /**
      * Set the defaultAnalyzer.
      *
      * @param defaultAnalyzer the defaultAnalyzer
-     * @return the IndexDefinition builder
+     * @return the IndexDefinitionJson builder
      */
     public Builder defaultAnalyzer(Analyzer defaultAnalyzer) {
       this.defaultAnalyzer = defaultAnalyzer;
@@ -80,7 +110,7 @@ public class IndexDefinition extends GenericModel {
      * Set the defaultField.
      *
      * @param defaultField the defaultField
-     * @return the IndexDefinition builder
+     * @return the IndexDefinitionJson builder
      */
     public Builder defaultField(IndexTextOperatorDefaultField defaultField) {
       this.defaultField = defaultField;
@@ -91,7 +121,7 @@ public class IndexDefinition extends GenericModel {
      * Set the indexArrayLengths.
      *
      * @param indexArrayLengths the indexArrayLengths
-     * @return the IndexDefinition builder
+     * @return the IndexDefinitionJson builder
      */
     public Builder indexArrayLengths(Boolean indexArrayLengths) {
       this.indexArrayLengths = indexArrayLengths;
@@ -102,25 +132,40 @@ public class IndexDefinition extends GenericModel {
      * Set the partialFilterSelector.
      *
      * @param partialFilterSelector the partialFilterSelector
-     * @return the IndexDefinition builder
+     * @return the IndexDefinitionJson builder
      */
     public Builder partialFilterSelector(Map<String, Object> partialFilterSelector) {
       this.partialFilterSelector = partialFilterSelector;
       return this;
     }
+
+    /**
+     * Set the fields.
+     * Existing fields will be replaced.
+     *
+     * @param fields the fields
+     * @return the IndexDefinitionJson builder
+     */
+    public Builder fields(List<Map<String, String>> fields) {
+      this.fields = fields;
+      return this;
+    }
   }
 
-  protected IndexDefinition(Builder builder) {
+  protected IndexDefinitionJson(Builder builder) {
+    com.ibm.cloud.sdk.core.util.Validator.notNull(builder.fields,
+      "fields cannot be null");
     defaultAnalyzer = builder.defaultAnalyzer;
     defaultField = builder.defaultField;
     indexArrayLengths = builder.indexArrayLengths;
     partialFilterSelector = builder.partialFilterSelector;
+    fields = builder.fields;
   }
 
   /**
    * New builder.
    *
-   * @return a IndexDefinition builder
+   * @return a IndexDefinitionJson builder
    */
   public Builder newBuilder() {
     return new Builder(this);
@@ -195,6 +240,17 @@ public class IndexDefinition extends GenericModel {
    */
   public Map<String, Object> partialFilterSelector() {
     return partialFilterSelector;
+  }
+
+  /**
+   * Gets the fields.
+   *
+   * List of fields to index.
+   *
+   * @return the fields
+   */
+  public List<Map<String, String>> fields() {
+    return fields;
   }
 }
 

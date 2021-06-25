@@ -13,36 +13,35 @@
 
 package com.ibm.cloud.cloudant.v1.model;
 
-import com.ibm.cloud.cloudant.v1.model.TextIndexField;
+import com.ibm.cloud.cloudant.v1.model.Analyzer;
+import com.ibm.cloud.cloudant.v1.model.IndexDefinitionJson;
+import com.ibm.cloud.cloudant.v1.model.IndexInformationJson;
+import com.ibm.cloud.cloudant.v1.model.IndexTextOperatorDefaultField;
 import com.ibm.cloud.cloudant.v1.utils.TestUtilities;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the TextIndexField model.
+ * Unit test class for the IndexInformationJson model.
  */
-public class TextIndexFieldTest {
+public class IndexInformationJsonTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
   @Test
-  public void testTextIndexField() throws Throwable {
-    TextIndexField textIndexFieldModel = new TextIndexField.Builder()
-      .name("testString")
-      .type("boolean")
-      .build();
-    assertEquals(textIndexFieldModel.name(), "testString");
-    assertEquals(textIndexFieldModel.type(), "boolean");
-
-    String json = TestUtilities.serialize(textIndexFieldModel);
-
-    TextIndexField textIndexFieldModelNew = TestUtilities.deserialize(json, TextIndexField.class);
-    assertTrue(textIndexFieldModelNew instanceof TextIndexField);
-    assertEquals(textIndexFieldModelNew.name(), "testString");
-    assertEquals(textIndexFieldModelNew.type(), "boolean");
+  public void testIndexInformationJson() throws Throwable {
+    IndexInformationJson indexInformationJsonModel = new IndexInformationJson();
+    assertNull(indexInformationJsonModel.getDdoc());
+    assertNull(indexInformationJsonModel.getName());
+    assertNull(indexInformationJsonModel.getType());
+    assertNull(indexInformationJsonModel.getDef());
+    assertNull(indexInformationJsonModel.isPartitioned());
   }
 }

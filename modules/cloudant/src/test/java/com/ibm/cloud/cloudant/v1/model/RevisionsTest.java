@@ -34,10 +34,10 @@ public class RevisionsTest {
   @Test
   public void testRevisions() throws Throwable {
     Revisions revisionsModel = new Revisions.Builder()
-      .ids(new ArrayList<String>(Arrays.asList("testString")))
+      .ids(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .start(Long.valueOf("1"))
       .build();
-    assertEquals(revisionsModel.ids(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(revisionsModel.ids(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(revisionsModel.start(), Long.valueOf("1"));
 
     String json = TestUtilities.serialize(revisionsModel);

@@ -13,9 +13,9 @@
 package com.ibm.cloud.cloudant.v1.model;
 
 /**
- * TextIndexConfiguration.
+ * IndexConfigurationText.
  */
-public class TextIndexConfiguration extends IndexConfiguration {
+public class IndexConfigurationText extends IndexConfiguration {
 
   /**
    * Schema for the type of an index.
@@ -39,11 +39,11 @@ public class TextIndexConfiguration extends IndexConfiguration {
     private String type;
     private IndexDefinitionText index;
 
-    public Builder(IndexConfiguration textIndexConfiguration) {
-      this.ddoc = textIndexConfiguration.ddoc;
-      this.name = textIndexConfiguration.name;
-      this.type = textIndexConfiguration.type;
-      this.index = (IndexDefinitionText) textIndexConfiguration.index;
+    public Builder(IndexConfiguration indexConfigurationText) {
+      this.ddoc = indexConfigurationText.ddoc;
+      this.name = indexConfigurationText.name;
+      this.type = indexConfigurationText.type;
+      this.index = indexConfigurationText.index;
     }
 
     /**
@@ -62,19 +62,19 @@ public class TextIndexConfiguration extends IndexConfiguration {
     }
 
     /**
-     * Builds a TextIndexConfiguration.
+     * Builds a IndexConfigurationText.
      *
-     * @return the new TextIndexConfiguration instance
+     * @return the new IndexConfigurationText instance
      */
-    public TextIndexConfiguration build() {
-      return new TextIndexConfiguration(this);
+    public IndexConfigurationText build() {
+      return new IndexConfigurationText(this);
     }
 
     /**
      * Set the ddoc.
      *
      * @param ddoc the ddoc
-     * @return the TextIndexConfiguration builder
+     * @return the IndexConfigurationText builder
      */
     public Builder ddoc(String ddoc) {
       this.ddoc = ddoc;
@@ -85,7 +85,7 @@ public class TextIndexConfiguration extends IndexConfiguration {
      * Set the name.
      *
      * @param name the name
-     * @return the TextIndexConfiguration builder
+     * @return the IndexConfigurationText builder
      */
     public Builder name(String name) {
       this.name = name;
@@ -96,7 +96,7 @@ public class TextIndexConfiguration extends IndexConfiguration {
      * Set the type.
      *
      * @param type the type
-     * @return the TextIndexConfiguration builder
+     * @return the IndexConfigurationText builder
      */
     public Builder type(String type) {
       this.type = type;
@@ -107,7 +107,7 @@ public class TextIndexConfiguration extends IndexConfiguration {
      * Set the index.
      *
      * @param index the index
-     * @return the TextIndexConfiguration builder
+     * @return the IndexConfigurationText builder
      */
     public Builder index(IndexDefinitionText index) {
       this.index = index;
@@ -115,7 +115,7 @@ public class TextIndexConfiguration extends IndexConfiguration {
     }
   }
 
-  protected TextIndexConfiguration(Builder builder) {
+  protected IndexConfigurationText(Builder builder) {
     com.ibm.cloud.sdk.core.util.Validator.notNull(builder.index,
       "index cannot be null");
     ddoc = builder.ddoc;
@@ -127,7 +127,7 @@ public class TextIndexConfiguration extends IndexConfiguration {
   /**
    * New builder.
    *
-   * @return a TextIndexConfiguration builder
+   * @return a IndexConfigurationText builder
    */
   public Builder newBuilder() {
     return new Builder(this);

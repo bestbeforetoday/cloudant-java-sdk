@@ -36,31 +36,31 @@ public class PostFindOptionsTest {
   public void testPostFindOptions() throws Throwable {
     PostFindOptions postFindOptionsModel = new PostFindOptions.Builder()
       .db("testString")
-      .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+      .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
       .bookmark("testString")
       .conflicts(true)
       .executionStats(true)
-      .fields(new ArrayList<String>(Arrays.asList("testString")))
+      .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .limit(Long.valueOf("0"))
       .skip(Long.valueOf("0"))
-      .sort(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+      .sort(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
       .stable(true)
       .update("false")
-      .useIndex(new ArrayList<String>(Arrays.asList("testString")))
+      .useIndex(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .r(Long.valueOf("1"))
       .build();
     assertEquals(postFindOptionsModel.db(), "testString");
-    assertEquals(postFindOptionsModel.selector(), new HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(postFindOptionsModel.selector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
     assertEquals(postFindOptionsModel.bookmark(), "testString");
     assertEquals(postFindOptionsModel.conflicts(), Boolean.valueOf(true));
     assertEquals(postFindOptionsModel.executionStats(), Boolean.valueOf(true));
-    assertEquals(postFindOptionsModel.fields(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postFindOptionsModel.fields(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postFindOptionsModel.limit(), Long.valueOf("0"));
     assertEquals(postFindOptionsModel.skip(), Long.valueOf("0"));
-    assertEquals(postFindOptionsModel.sort(), new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })));
+    assertEquals(postFindOptionsModel.sort(), new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })));
     assertEquals(postFindOptionsModel.stable(), Boolean.valueOf(true));
     assertEquals(postFindOptionsModel.update(), "false");
-    assertEquals(postFindOptionsModel.useIndex(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postFindOptionsModel.useIndex(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postFindOptionsModel.r(), Long.valueOf("1"));
   }
 

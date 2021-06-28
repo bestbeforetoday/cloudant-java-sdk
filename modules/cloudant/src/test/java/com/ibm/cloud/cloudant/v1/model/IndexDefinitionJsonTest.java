@@ -38,10 +38,10 @@ public class IndexDefinitionJsonTest {
   public void testIndexDefinitionJson() throws Throwable {
     Analyzer analyzerModel = new Analyzer.Builder()
       .name("classic")
-      .stopwords(new ArrayList<String>(Arrays.asList("testString")))
+      .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .build();
     assertEquals(analyzerModel.name(), "classic");
-    assertEquals(analyzerModel.stopwords(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(analyzerModel.stopwords(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
 
     IndexTextOperatorDefaultField indexTextOperatorDefaultFieldModel = new IndexTextOperatorDefaultField.Builder()
       .analyzer(analyzerModel)
@@ -54,14 +54,14 @@ public class IndexDefinitionJsonTest {
       .defaultAnalyzer(analyzerModel)
       .defaultField(indexTextOperatorDefaultFieldModel)
       .indexArrayLengths(true)
-      .partialFilterSelector(new HashMap<String, Object>() { { put("foo", "testString"); } })
-      .fields(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+      .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
+      .fields(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
       .build();
     assertEquals(indexDefinitionJsonModel.defaultAnalyzer(), analyzerModel);
     assertEquals(indexDefinitionJsonModel.defaultField(), indexTextOperatorDefaultFieldModel);
     assertEquals(indexDefinitionJsonModel.indexArrayLengths(), Boolean.valueOf(true));
-    assertEquals(indexDefinitionJsonModel.partialFilterSelector(), new HashMap<String, Object>() { { put("foo", "testString"); } });
-    assertEquals(indexDefinitionJsonModel.fields(), new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })));
+    assertEquals(indexDefinitionJsonModel.partialFilterSelector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(indexDefinitionJsonModel.fields(), new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })));
 
     String json = TestUtilities.serialize(indexDefinitionJsonModel);
 

@@ -47,7 +47,7 @@ public class PostPartitionAllDocsOptionsTest {
       .updateSeq(true)
       .endkey("testString")
       .key("testString")
-      .keys(new ArrayList<String>(Arrays.asList("testString")))
+      .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .startkey("testString")
       .build();
     assertEquals(postPartitionAllDocsOptionsModel.db(), "testString");
@@ -63,7 +63,7 @@ public class PostPartitionAllDocsOptionsTest {
     assertEquals(postPartitionAllDocsOptionsModel.updateSeq(), Boolean.valueOf(true));
     assertEquals(postPartitionAllDocsOptionsModel.endkey(), "testString");
     assertEquals(postPartitionAllDocsOptionsModel.key(), "testString");
-    assertEquals(postPartitionAllDocsOptionsModel.keys(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postPartitionAllDocsOptionsModel.keys(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postPartitionAllDocsOptionsModel.startkey(), "testString");
   }
 

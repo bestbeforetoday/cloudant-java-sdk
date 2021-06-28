@@ -51,7 +51,7 @@ public class PostViewOptionsTest {
       .group(true)
       .groupLevel(Long.valueOf("1"))
       .key("testString")
-      .keys(new ArrayList<Object>(Arrays.asList("testString")))
+      .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
       .reduce(true)
       .stable(true)
       .startkey("testString")
@@ -75,7 +75,7 @@ public class PostViewOptionsTest {
     assertEquals(postViewOptionsModel.group(), Boolean.valueOf(true));
     assertEquals(postViewOptionsModel.groupLevel(), Long.valueOf("1"));
     assertEquals(postViewOptionsModel.key(), "testString");
-    assertEquals(postViewOptionsModel.keys(), new ArrayList<Object>(Arrays.asList("testString")));
+    assertEquals(postViewOptionsModel.keys(), new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")));
     assertEquals(postViewOptionsModel.reduce(), Boolean.valueOf(true));
     assertEquals(postViewOptionsModel.stable(), Boolean.valueOf(true));
     assertEquals(postViewOptionsModel.startkey(), "testString");

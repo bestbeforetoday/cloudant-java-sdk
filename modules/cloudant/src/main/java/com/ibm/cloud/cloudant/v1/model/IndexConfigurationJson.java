@@ -43,7 +43,7 @@ public class IndexConfigurationJson extends IndexConfiguration {
       this.ddoc = indexConfigurationJson.ddoc;
       this.name = indexConfigurationJson.name;
       this.type = indexConfigurationJson.type;
-      this.index = (IndexDefinitionJson) indexConfigurationJson.index;
+      this.index = indexConfigurationJson.index;
     }
 
     /**

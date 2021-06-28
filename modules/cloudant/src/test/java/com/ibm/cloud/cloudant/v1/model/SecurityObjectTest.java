@@ -34,11 +34,11 @@ public class SecurityObjectTest {
   @Test
   public void testSecurityObject() throws Throwable {
     SecurityObject securityObjectModel = new SecurityObject.Builder()
-      .names(new ArrayList<String>(Arrays.asList("testString")))
-      .roles(new ArrayList<String>(Arrays.asList("testString")))
+      .names(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .roles(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .build();
-    assertEquals(securityObjectModel.names(), new ArrayList<String>(Arrays.asList("testString")));
-    assertEquals(securityObjectModel.roles(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(securityObjectModel.names(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(securityObjectModel.roles(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
 
     String json = TestUtilities.serialize(securityObjectModel);
 

@@ -36,11 +36,11 @@ public class UserContextTest {
     UserContext userContextModel = new UserContext.Builder()
       .db("testString")
       .name("testString")
-      .roles(new ArrayList<String>(Arrays.asList("_reader")))
+      .roles(new java.util.ArrayList<String>(java.util.Arrays.asList("_reader")))
       .build();
     assertEquals(userContextModel.db(), "testString");
     assertEquals(userContextModel.name(), "testString");
-    assertEquals(userContextModel.roles(), new ArrayList<String>(Arrays.asList("_reader")));
+    assertEquals(userContextModel.roles(), new java.util.ArrayList<String>(java.util.Arrays.asList("_reader")));
 
     String json = TestUtilities.serialize(userContextModel);
 

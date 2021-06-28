@@ -46,7 +46,7 @@ public class PostDesignDocsQueriesOptionsTest {
       .updateSeq(true)
       .endkey("testString")
       .key("testString")
-      .keys(new ArrayList<String>(Arrays.asList("testString")))
+      .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .startkey("testString")
       .build();
     assertEquals(allDocsQueryModel.attEncodingInfo(), Boolean.valueOf(true));
@@ -60,16 +60,16 @@ public class PostDesignDocsQueriesOptionsTest {
     assertEquals(allDocsQueryModel.updateSeq(), Boolean.valueOf(true));
     assertEquals(allDocsQueryModel.endkey(), "testString");
     assertEquals(allDocsQueryModel.key(), "testString");
-    assertEquals(allDocsQueryModel.keys(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(allDocsQueryModel.keys(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(allDocsQueryModel.startkey(), "testString");
 
     PostDesignDocsQueriesOptions postDesignDocsQueriesOptionsModel = new PostDesignDocsQueriesOptions.Builder()
       .db("testString")
-      .queries(new ArrayList<AllDocsQuery>(Arrays.asList(allDocsQueryModel)))
+      .queries(new java.util.ArrayList<AllDocsQuery>(java.util.Arrays.asList(allDocsQueryModel)))
       .accept("application/json")
       .build();
     assertEquals(postDesignDocsQueriesOptionsModel.db(), "testString");
-    assertEquals(postDesignDocsQueriesOptionsModel.queries(), new ArrayList<AllDocsQuery>(Arrays.asList(allDocsQueryModel)));
+    assertEquals(postDesignDocsQueriesOptionsModel.queries(), new java.util.ArrayList<AllDocsQuery>(java.util.Arrays.asList(allDocsQueryModel)));
     assertEquals(postDesignDocsQueriesOptionsModel.accept(), "application/json");
   }
 

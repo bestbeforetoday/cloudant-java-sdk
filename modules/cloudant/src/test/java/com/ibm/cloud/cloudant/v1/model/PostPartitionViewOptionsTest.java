@@ -52,7 +52,7 @@ public class PostPartitionViewOptionsTest {
       .group(true)
       .groupLevel(Long.valueOf("1"))
       .key("testString")
-      .keys(new ArrayList<Object>(Arrays.asList("testString")))
+      .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
       .reduce(true)
       .stable(true)
       .startkey("testString")
@@ -77,7 +77,7 @@ public class PostPartitionViewOptionsTest {
     assertEquals(postPartitionViewOptionsModel.group(), Boolean.valueOf(true));
     assertEquals(postPartitionViewOptionsModel.groupLevel(), Long.valueOf("1"));
     assertEquals(postPartitionViewOptionsModel.key(), "testString");
-    assertEquals(postPartitionViewOptionsModel.keys(), new ArrayList<Object>(Arrays.asList("testString")));
+    assertEquals(postPartitionViewOptionsModel.keys(), new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")));
     assertEquals(postPartitionViewOptionsModel.reduce(), Boolean.valueOf(true));
     assertEquals(postPartitionViewOptionsModel.stable(), Boolean.valueOf(true));
     assertEquals(postPartitionViewOptionsModel.startkey(), "testString");

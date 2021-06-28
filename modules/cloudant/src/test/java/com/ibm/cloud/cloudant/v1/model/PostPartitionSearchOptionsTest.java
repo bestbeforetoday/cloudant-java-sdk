@@ -40,15 +40,15 @@ public class PostPartitionSearchOptionsTest {
       .index("testString")
       .query("testString")
       .bookmark("testString")
-      .highlightFields(new ArrayList<String>(Arrays.asList("testString")))
+      .highlightFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .highlightNumber(Long.valueOf("1"))
       .highlightPostTag("testString")
       .highlightPreTag("testString")
       .highlightSize(Long.valueOf("1"))
       .includeDocs(true)
-      .includeFields(new ArrayList<String>(Arrays.asList("testString")))
+      .includeFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .limit(Long.valueOf("0"))
-      .sort(new ArrayList<String>(Arrays.asList("testString")))
+      .sort(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .stale("ok")
       .build();
     assertEquals(postPartitionSearchOptionsModel.db(), "testString");
@@ -57,15 +57,15 @@ public class PostPartitionSearchOptionsTest {
     assertEquals(postPartitionSearchOptionsModel.index(), "testString");
     assertEquals(postPartitionSearchOptionsModel.query(), "testString");
     assertEquals(postPartitionSearchOptionsModel.bookmark(), "testString");
-    assertEquals(postPartitionSearchOptionsModel.highlightFields(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postPartitionSearchOptionsModel.highlightFields(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postPartitionSearchOptionsModel.highlightNumber(), Long.valueOf("1"));
     assertEquals(postPartitionSearchOptionsModel.highlightPostTag(), "testString");
     assertEquals(postPartitionSearchOptionsModel.highlightPreTag(), "testString");
     assertEquals(postPartitionSearchOptionsModel.highlightSize(), Long.valueOf("1"));
     assertEquals(postPartitionSearchOptionsModel.includeDocs(), Boolean.valueOf(true));
-    assertEquals(postPartitionSearchOptionsModel.includeFields(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postPartitionSearchOptionsModel.includeFields(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postPartitionSearchOptionsModel.limit(), Long.valueOf("0"));
-    assertEquals(postPartitionSearchOptionsModel.sort(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postPartitionSearchOptionsModel.sort(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postPartitionSearchOptionsModel.stale(), "ok");
   }
 

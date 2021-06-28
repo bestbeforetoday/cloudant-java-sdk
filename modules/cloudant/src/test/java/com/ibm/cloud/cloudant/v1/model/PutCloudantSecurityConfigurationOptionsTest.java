@@ -35,21 +35,21 @@ public class PutCloudantSecurityConfigurationOptionsTest {
   @Test
   public void testPutCloudantSecurityConfigurationOptions() throws Throwable {
     SecurityObject securityObjectModel = new SecurityObject.Builder()
-      .names(new ArrayList<String>(Arrays.asList("testString")))
-      .roles(new ArrayList<String>(Arrays.asList("testString")))
+      .names(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .roles(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .build();
-    assertEquals(securityObjectModel.names(), new ArrayList<String>(Arrays.asList("testString")));
-    assertEquals(securityObjectModel.roles(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(securityObjectModel.names(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(securityObjectModel.roles(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
 
     PutCloudantSecurityConfigurationOptions putCloudantSecurityConfigurationOptionsModel = new PutCloudantSecurityConfigurationOptions.Builder()
       .db("testString")
-      .cloudant(new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("_reader"))); } })
+      .cloudant(new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("_reader"))); } })
       .admins(securityObjectModel)
       .members(securityObjectModel)
       .couchdbAuthOnly(true)
       .build();
     assertEquals(putCloudantSecurityConfigurationOptionsModel.db(), "testString");
-    assertEquals(putCloudantSecurityConfigurationOptionsModel.cloudant(), new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("_reader"))); } });
+    assertEquals(putCloudantSecurityConfigurationOptionsModel.cloudant(), new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("_reader"))); } });
     assertEquals(putCloudantSecurityConfigurationOptionsModel.admins(), securityObjectModel);
     assertEquals(putCloudantSecurityConfigurationOptionsModel.members(), securityObjectModel);
     assertEquals(putCloudantSecurityConfigurationOptionsModel.couchdbAuthOnly(), Boolean.valueOf(true));

@@ -34,9 +34,9 @@ public class PostDbsInfoOptionsTest {
   @Test
   public void testPostDbsInfoOptions() throws Throwable {
     PostDbsInfoOptions postDbsInfoOptionsModel = new PostDbsInfoOptions.Builder()
-      .keys(new ArrayList<String>(Arrays.asList("testString")))
+      .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .build();
-    assertEquals(postDbsInfoOptionsModel.keys(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postDbsInfoOptionsModel.keys(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

@@ -36,19 +36,19 @@ public class AnalyzerConfigurationTest {
   public void testAnalyzerConfiguration() throws Throwable {
     Analyzer analyzerModel = new Analyzer.Builder()
       .name("classic")
-      .stopwords(new ArrayList<String>(Arrays.asList("testString")))
+      .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .build();
     assertEquals(analyzerModel.name(), "classic");
-    assertEquals(analyzerModel.stopwords(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(analyzerModel.stopwords(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
 
     AnalyzerConfiguration analyzerConfigurationModel = new AnalyzerConfiguration.Builder()
       .name("classic")
-      .stopwords(new ArrayList<String>(Arrays.asList("testString")))
-      .fields(new HashMap<String, Analyzer>() { { put("foo", analyzerModel); } })
+      .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+      .fields(new java.util.HashMap<String, Analyzer>() { { put("foo", analyzerModel); } })
       .build();
     assertEquals(analyzerConfigurationModel.name(), "classic");
-    assertEquals(analyzerConfigurationModel.stopwords(), new ArrayList<String>(Arrays.asList("testString")));
-    assertEquals(analyzerConfigurationModel.fields(), new HashMap<String, Analyzer>() { { put("foo", analyzerModel); } });
+    assertEquals(analyzerConfigurationModel.stopwords(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
+    assertEquals(analyzerConfigurationModel.fields(), new java.util.HashMap<String, Analyzer>() { { put("foo", analyzerModel); } });
 
     String json = TestUtilities.serialize(analyzerConfigurationModel);
 

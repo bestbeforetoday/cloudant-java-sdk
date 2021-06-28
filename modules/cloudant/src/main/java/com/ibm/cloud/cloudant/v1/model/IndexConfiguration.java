@@ -19,7 +19,7 @@ import com.ibm.cloud.sdk.core.service.model.GenericModel;
  *
  * Classes which extend this class:
  * - IndexConfigurationJson
- * - TextIndexConfiguration
+ * - IndexConfigurationText
  */
 public class IndexConfiguration extends GenericModel {
 
@@ -38,7 +38,7 @@ public class IndexConfiguration extends GenericModel {
   protected String ddoc;
   protected String name;
   protected String type;
-  protected Object index;
+  protected IndexDefinitionJson index;
 
   protected IndexConfiguration() {
   }
@@ -86,7 +86,7 @@ public class IndexConfiguration extends GenericModel {
    *
    * @return the index
    */
-  public Object index() {
+  public IndexDefinitionJson index() {
     return index;
   }
 }

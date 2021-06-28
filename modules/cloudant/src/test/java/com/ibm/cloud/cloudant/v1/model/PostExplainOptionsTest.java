@@ -36,31 +36,31 @@ public class PostExplainOptionsTest {
   public void testPostExplainOptions() throws Throwable {
     PostExplainOptions postExplainOptionsModel = new PostExplainOptions.Builder()
       .db("testString")
-      .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+      .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
       .bookmark("testString")
       .conflicts(true)
       .executionStats(true)
-      .fields(new ArrayList<String>(Arrays.asList("testString")))
+      .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .limit(Long.valueOf("0"))
       .skip(Long.valueOf("0"))
-      .sort(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+      .sort(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
       .stable(true)
       .update("false")
-      .useIndex(new ArrayList<String>(Arrays.asList("testString")))
+      .useIndex(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .r(Long.valueOf("1"))
       .build();
     assertEquals(postExplainOptionsModel.db(), "testString");
-    assertEquals(postExplainOptionsModel.selector(), new HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(postExplainOptionsModel.selector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
     assertEquals(postExplainOptionsModel.bookmark(), "testString");
     assertEquals(postExplainOptionsModel.conflicts(), Boolean.valueOf(true));
     assertEquals(postExplainOptionsModel.executionStats(), Boolean.valueOf(true));
-    assertEquals(postExplainOptionsModel.fields(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postExplainOptionsModel.fields(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postExplainOptionsModel.limit(), Long.valueOf("0"));
     assertEquals(postExplainOptionsModel.skip(), Long.valueOf("0"));
-    assertEquals(postExplainOptionsModel.sort(), new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })));
+    assertEquals(postExplainOptionsModel.sort(), new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })));
     assertEquals(postExplainOptionsModel.stable(), Boolean.valueOf(true));
     assertEquals(postExplainOptionsModel.update(), "false");
-    assertEquals(postExplainOptionsModel.useIndex(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postExplainOptionsModel.useIndex(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postExplainOptionsModel.r(), Long.valueOf("1"));
   }
 

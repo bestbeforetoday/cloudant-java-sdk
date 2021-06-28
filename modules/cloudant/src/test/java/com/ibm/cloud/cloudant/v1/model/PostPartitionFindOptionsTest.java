@@ -37,31 +37,31 @@ public class PostPartitionFindOptionsTest {
     PostPartitionFindOptions postPartitionFindOptionsModel = new PostPartitionFindOptions.Builder()
       .db("testString")
       .partitionKey("testString")
-      .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+      .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
       .bookmark("testString")
       .conflicts(true)
       .executionStats(true)
-      .fields(new ArrayList<String>(Arrays.asList("testString")))
+      .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .limit(Long.valueOf("0"))
       .skip(Long.valueOf("0"))
-      .sort(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+      .sort(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
       .stable(true)
       .update("false")
-      .useIndex(new ArrayList<String>(Arrays.asList("testString")))
+      .useIndex(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .build();
     assertEquals(postPartitionFindOptionsModel.db(), "testString");
     assertEquals(postPartitionFindOptionsModel.partitionKey(), "testString");
-    assertEquals(postPartitionFindOptionsModel.selector(), new HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(postPartitionFindOptionsModel.selector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
     assertEquals(postPartitionFindOptionsModel.bookmark(), "testString");
     assertEquals(postPartitionFindOptionsModel.conflicts(), Boolean.valueOf(true));
     assertEquals(postPartitionFindOptionsModel.executionStats(), Boolean.valueOf(true));
-    assertEquals(postPartitionFindOptionsModel.fields(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postPartitionFindOptionsModel.fields(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postPartitionFindOptionsModel.limit(), Long.valueOf("0"));
     assertEquals(postPartitionFindOptionsModel.skip(), Long.valueOf("0"));
-    assertEquals(postPartitionFindOptionsModel.sort(), new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })));
+    assertEquals(postPartitionFindOptionsModel.sort(), new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })));
     assertEquals(postPartitionFindOptionsModel.stable(), Boolean.valueOf(true));
     assertEquals(postPartitionFindOptionsModel.update(), "false");
-    assertEquals(postPartitionFindOptionsModel.useIndex(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postPartitionFindOptionsModel.useIndex(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
   }
 
   @Test(expectedExceptions = IllegalArgumentException.class)

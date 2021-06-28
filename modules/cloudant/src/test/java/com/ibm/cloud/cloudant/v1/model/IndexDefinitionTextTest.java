@@ -38,10 +38,10 @@ public class IndexDefinitionTextTest {
   public void testIndexDefinitionText() throws Throwable {
     Analyzer analyzerModel = new Analyzer.Builder()
       .name("classic")
-      .stopwords(new ArrayList<String>(Arrays.asList("testString")))
+      .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .build();
     assertEquals(analyzerModel.name(), "classic");
-    assertEquals(analyzerModel.stopwords(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(analyzerModel.stopwords(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
 
     IndexTextOperatorDefaultField indexTextOperatorDefaultFieldModel = new IndexTextOperatorDefaultField.Builder()
       .analyzer(analyzerModel)
@@ -61,14 +61,14 @@ public class IndexDefinitionTextTest {
       .defaultAnalyzer(analyzerModel)
       .defaultField(indexTextOperatorDefaultFieldModel)
       .indexArrayLengths(true)
-      .partialFilterSelector(new HashMap<String, Object>() { { put("foo", "testString"); } })
-      .fields(new ArrayList<IndexFieldText>(Arrays.asList(indexFieldTextModel)))
+      .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
+      .fields(new java.util.ArrayList<IndexFieldText>(java.util.Arrays.asList(indexFieldTextModel)))
       .build();
     assertEquals(indexDefinitionTextModel.defaultAnalyzer(), analyzerModel);
     assertEquals(indexDefinitionTextModel.defaultField(), indexTextOperatorDefaultFieldModel);
     assertEquals(indexDefinitionTextModel.indexArrayLengths(), Boolean.valueOf(true));
-    assertEquals(indexDefinitionTextModel.partialFilterSelector(), new HashMap<String, Object>() { { put("foo", "testString"); } });
-    assertEquals(indexDefinitionTextModel.fields(), new ArrayList<IndexFieldText>(Arrays.asList(indexFieldTextModel)));
+    assertEquals(indexDefinitionTextModel.partialFilterSelector(), new java.util.HashMap<String, Object>() { { put("foo", "testString"); } });
+    assertEquals(indexDefinitionTextModel.fields(), new java.util.ArrayList<IndexFieldText>(java.util.Arrays.asList(indexFieldTextModel)));
 
     String json = TestUtilities.serialize(indexDefinitionTextModel);
 

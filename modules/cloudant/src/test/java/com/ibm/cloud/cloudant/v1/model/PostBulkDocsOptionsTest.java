@@ -61,10 +61,10 @@ public class PostBulkDocsOptionsTest {
     assertEquals(attachmentModel.stub(), Boolean.valueOf(true));
 
     Revisions revisionsModel = new Revisions.Builder()
-      .ids(new ArrayList<String>(Arrays.asList("testString")))
+      .ids(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .start(Long.valueOf("1"))
       .build();
-    assertEquals(revisionsModel.ids(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(revisionsModel.ids(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(revisionsModel.start(), Long.valueOf("1"));
 
     DocumentRevisionStatus documentRevisionStatusModel = new DocumentRevisionStatus.Builder()
@@ -75,33 +75,33 @@ public class PostBulkDocsOptionsTest {
     assertEquals(documentRevisionStatusModel.status(), "available");
 
     Document documentModel = new Document.Builder()
-      .attachments(new HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
-      .conflicts(new ArrayList<String>(Arrays.asList("testString")))
+      .attachments(new java.util.HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
+      .conflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .deleted(true)
-      .deletedConflicts(new ArrayList<String>(Arrays.asList("testString")))
+      .deletedConflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .id("testString")
       .localSeq("testString")
       .rev("testString")
       .revisions(revisionsModel)
-      .revsInfo(new ArrayList<DocumentRevisionStatus>(Arrays.asList(documentRevisionStatusModel)))
+      .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
       .add("foo", "testString")
       .build();
-    assertEquals(documentModel.getAttachments(), new HashMap<String, Attachment>() { { put("foo", attachmentModel); } });
-    assertEquals(documentModel.getConflicts(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(documentModel.getAttachments(), new java.util.HashMap<String, Attachment>() { { put("foo", attachmentModel); } });
+    assertEquals(documentModel.getConflicts(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(documentModel.isDeleted(), Boolean.valueOf(true));
-    assertEquals(documentModel.getDeletedConflicts(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(documentModel.getDeletedConflicts(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(documentModel.getId(), "testString");
     assertEquals(documentModel.getLocalSeq(), "testString");
     assertEquals(documentModel.getRev(), "testString");
     assertEquals(documentModel.getRevisions(), revisionsModel);
-    assertEquals(documentModel.getRevsInfo(), new ArrayList<DocumentRevisionStatus>(Arrays.asList(documentRevisionStatusModel)));
+    assertEquals(documentModel.getRevsInfo(), new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)));
     assertEquals(documentModel.get("foo"), "testString");
 
     BulkDocs bulkDocsModel = new BulkDocs.Builder()
-      .docs(new ArrayList<Document>(Arrays.asList(documentModel)))
+      .docs(new java.util.ArrayList<Document>(java.util.Arrays.asList(documentModel)))
       .newEdits(true)
       .build();
-    assertEquals(bulkDocsModel.docs(), new ArrayList<Document>(Arrays.asList(documentModel)));
+    assertEquals(bulkDocsModel.docs(), new java.util.ArrayList<Document>(java.util.Arrays.asList(documentModel)));
     assertEquals(bulkDocsModel.newEdits(), Boolean.valueOf(true));
 
     PostBulkDocsOptions postBulkDocsOptionsModel = new PostBulkDocsOptions.Builder()

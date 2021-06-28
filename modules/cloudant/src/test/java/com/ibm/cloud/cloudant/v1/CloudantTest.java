@@ -116,6 +116,7 @@ import com.ibm.cloud.cloudant.v1.model.HeadSchedulerJobOptions;
 import com.ibm.cloud.cloudant.v1.model.HeadUpInformationOptions;
 import com.ibm.cloud.cloudant.v1.model.IndexConfiguration;
 import com.ibm.cloud.cloudant.v1.model.IndexConfigurationJson;
+import com.ibm.cloud.cloudant.v1.model.IndexConfigurationText;
 import com.ibm.cloud.cloudant.v1.model.IndexDefinitionJson;
 import com.ibm.cloud.cloudant.v1.model.IndexDefinitionText;
 import com.ibm.cloud.cloudant.v1.model.IndexFieldText;
@@ -198,7 +199,6 @@ import com.ibm.cloud.cloudant.v1.model.ServerVendor;
 import com.ibm.cloud.cloudant.v1.model.SessionAuthentication;
 import com.ibm.cloud.cloudant.v1.model.SessionInformation;
 import com.ibm.cloud.cloudant.v1.model.ShardsInformation;
-import com.ibm.cloud.cloudant.v1.model.TextIndexConfiguration;
 import com.ibm.cloud.cloudant.v1.model.ThroughputInformation;
 import com.ibm.cloud.cloudant.v1.model.UpInformation;
 import com.ibm.cloud.cloudant.v1.model.UserContext;
@@ -532,9 +532,9 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostChangesOptions model
     PostChangesOptions postChangesOptionsModel = new PostChangesOptions.Builder()
     .db("testString")
-    .docIds(new ArrayList<String>(Arrays.asList("0007741142412418284")))
-    .fields(new ArrayList<String>(Arrays.asList("testString")))
-    .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+    .docIds(new java.util.ArrayList<String>(java.util.Arrays.asList("0007741142412418284")))
+    .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+    .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .lastEventId("testString")
     .attEncodingInfo(true)
     .attachments(true)
@@ -614,9 +614,9 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostChangesOptions model
     PostChangesOptions postChangesOptionsModel = new PostChangesOptions.Builder()
     .db("testString")
-    .docIds(new ArrayList<String>(Arrays.asList("0007741142412418284")))
-    .fields(new ArrayList<String>(Arrays.asList("testString")))
-    .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+    .docIds(new java.util.ArrayList<String>(java.util.Arrays.asList("0007741142412418284")))
+    .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+    .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .lastEventId("testString")
     .attEncodingInfo(true)
     .attachments(true)
@@ -797,7 +797,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the PostDbsInfoOptions model
     PostDbsInfoOptions postDbsInfoOptionsModel = new PostDbsInfoOptions.Builder()
-    .keys(new ArrayList<String>(Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -1070,7 +1070,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Revisions model
     Revisions revisionsModel = new Revisions.Builder()
-    .ids(new ArrayList<String>(Arrays.asList("testString")))
+    .ids(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .start(Long.valueOf("1"))
     .build();
 
@@ -1082,15 +1082,15 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Document model
     Document documentModel = new Document.Builder()
-    .attachments(new HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
-    .conflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .attachments(new java.util.HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
+    .conflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .deleted(true)
-    .deletedConflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .deletedConflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .id("testString")
     .localSeq("testString")
     .rev("testString")
     .revisions(revisionsModel)
-    .revsInfo(new ArrayList<DocumentRevisionStatus>(Arrays.asList(documentRevisionStatusModel)))
+    .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
     .add("foo", "testString")
     .build();
 
@@ -1162,7 +1162,7 @@ public class CloudantTest extends PowerMockTestCase {
     .updateSeq(true)
     .endkey("testString")
     .key("testString")
-    .keys(new ArrayList<String>(Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .startkey("0007741142412418284")
     .build();
 
@@ -1225,7 +1225,7 @@ public class CloudantTest extends PowerMockTestCase {
     .updateSeq(true)
     .endkey("testString")
     .key("testString")
-    .keys(new ArrayList<String>(Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .startkey("0007741142412418284")
     .build();
 
@@ -1292,14 +1292,14 @@ public class CloudantTest extends PowerMockTestCase {
     .updateSeq(true)
     .endkey("testString")
     .key("testString")
-    .keys(new ArrayList<String>(Arrays.asList("small-appliances:1000042", "small-appliances:1000043")))
+    .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("small-appliances:1000042", "small-appliances:1000043")))
     .startkey("testString")
     .build();
 
     // Construct an instance of the PostAllDocsQueriesOptions model
     PostAllDocsQueriesOptions postAllDocsQueriesOptionsModel = new PostAllDocsQueriesOptions.Builder()
     .db("testString")
-    .queries(new ArrayList<AllDocsQuery>(Arrays.asList(allDocsQueryModel)))
+    .queries(new java.util.ArrayList<AllDocsQuery>(java.util.Arrays.asList(allDocsQueryModel)))
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -1360,14 +1360,14 @@ public class CloudantTest extends PowerMockTestCase {
     .updateSeq(true)
     .endkey("testString")
     .key("testString")
-    .keys(new ArrayList<String>(Arrays.asList("small-appliances:1000042", "small-appliances:1000043")))
+    .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("small-appliances:1000042", "small-appliances:1000043")))
     .startkey("testString")
     .build();
 
     // Construct an instance of the PostAllDocsQueriesOptions model
     PostAllDocsQueriesOptions postAllDocsQueriesOptionsModel = new PostAllDocsQueriesOptions.Builder()
     .db("testString")
-    .queries(new ArrayList<AllDocsQuery>(Arrays.asList(allDocsQueryModel)))
+    .queries(new java.util.ArrayList<AllDocsQuery>(java.util.Arrays.asList(allDocsQueryModel)))
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -1435,7 +1435,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Revisions model
     Revisions revisionsModel = new Revisions.Builder()
-    .ids(new ArrayList<String>(Arrays.asList("testString")))
+    .ids(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .start(Long.valueOf("1"))
     .build();
 
@@ -1447,21 +1447,21 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Document model
     Document documentModel = new Document.Builder()
-    .attachments(new HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
-    .conflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .attachments(new java.util.HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
+    .conflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .deleted(true)
-    .deletedConflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .deletedConflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .id("testString")
     .localSeq("testString")
     .rev("testString")
     .revisions(revisionsModel)
-    .revsInfo(new ArrayList<DocumentRevisionStatus>(Arrays.asList(documentRevisionStatusModel)))
+    .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
     .add("foo", "testString")
     .build();
 
     // Construct an instance of the BulkDocs model
     BulkDocs bulkDocsModel = new BulkDocs.Builder()
-    .docs(new ArrayList<Document>(Arrays.asList(documentModel)))
+    .docs(new java.util.ArrayList<Document>(java.util.Arrays.asList(documentModel)))
     .newEdits(true)
     .build();
 
@@ -1518,7 +1518,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the BulkGetQueryDocument model
     BulkGetQueryDocument bulkGetQueryDocumentModel = new BulkGetQueryDocument.Builder()
-    .attsSince(new ArrayList<String>(Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
+    .attsSince(new java.util.ArrayList<String>(java.util.Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
     .id("order00067")
     .rev("3-917fa2381192822767f010b95b45325b")
     .build();
@@ -1526,7 +1526,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostBulkGetOptions model
     PostBulkGetOptions postBulkGetOptionsModel = new PostBulkGetOptions.Builder()
     .db("testString")
-    .docs(new ArrayList<BulkGetQueryDocument>(Arrays.asList(bulkGetQueryDocumentModel)))
+    .docs(new java.util.ArrayList<BulkGetQueryDocument>(java.util.Arrays.asList(bulkGetQueryDocumentModel)))
     .attachments(true)
     .attEncodingInfo(true)
     .latest(true)
@@ -1584,7 +1584,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the BulkGetQueryDocument model
     BulkGetQueryDocument bulkGetQueryDocumentModel = new BulkGetQueryDocument.Builder()
-    .attsSince(new ArrayList<String>(Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
+    .attsSince(new java.util.ArrayList<String>(java.util.Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
     .id("order00067")
     .rev("3-917fa2381192822767f010b95b45325b")
     .build();
@@ -1592,7 +1592,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostBulkGetOptions model
     PostBulkGetOptions postBulkGetOptionsModel = new PostBulkGetOptions.Builder()
     .db("testString")
-    .docs(new ArrayList<BulkGetQueryDocument>(Arrays.asList(bulkGetQueryDocumentModel)))
+    .docs(new java.util.ArrayList<BulkGetQueryDocument>(java.util.Arrays.asList(bulkGetQueryDocumentModel)))
     .attachments(true)
     .attEncodingInfo(true)
     .latest(true)
@@ -1650,7 +1650,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the BulkGetQueryDocument model
     BulkGetQueryDocument bulkGetQueryDocumentModel = new BulkGetQueryDocument.Builder()
-    .attsSince(new ArrayList<String>(Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
+    .attsSince(new java.util.ArrayList<String>(java.util.Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
     .id("order00067")
     .rev("3-917fa2381192822767f010b95b45325b")
     .build();
@@ -1658,7 +1658,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostBulkGetOptions model
     PostBulkGetOptions postBulkGetOptionsModel = new PostBulkGetOptions.Builder()
     .db("testString")
-    .docs(new ArrayList<BulkGetQueryDocument>(Arrays.asList(bulkGetQueryDocumentModel)))
+    .docs(new java.util.ArrayList<BulkGetQueryDocument>(java.util.Arrays.asList(bulkGetQueryDocumentModel)))
     .attachments(true)
     .attEncodingInfo(true)
     .latest(true)
@@ -1716,7 +1716,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the BulkGetQueryDocument model
     BulkGetQueryDocument bulkGetQueryDocumentModel = new BulkGetQueryDocument.Builder()
-    .attsSince(new ArrayList<String>(Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
+    .attsSince(new java.util.ArrayList<String>(java.util.Arrays.asList("1-99b02e08da151943c2dcb40090160bb8")))
     .id("order00067")
     .rev("3-917fa2381192822767f010b95b45325b")
     .build();
@@ -1724,7 +1724,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostBulkGetOptions model
     PostBulkGetOptions postBulkGetOptionsModel = new PostBulkGetOptions.Builder()
     .db("testString")
-    .docs(new ArrayList<BulkGetQueryDocument>(Arrays.asList(bulkGetQueryDocumentModel)))
+    .docs(new java.util.ArrayList<BulkGetQueryDocument>(java.util.Arrays.asList(bulkGetQueryDocumentModel)))
     .attachments(true)
     .attEncodingInfo(true)
     .latest(true)
@@ -2149,7 +2149,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Revisions model
     Revisions revisionsModel = new Revisions.Builder()
-    .ids(new ArrayList<String>(Arrays.asList("testString")))
+    .ids(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .start(Long.valueOf("1"))
     .build();
 
@@ -2171,14 +2171,14 @@ public class CloudantTest extends PowerMockTestCase {
     .revisions(revisionsModel)
     .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
     .add("brand", "Foo")
-    .add("colours", "[\"red\",\"green\",\"black\",\"blue\"]")
+    .add("colours", ""["red","green","black","blue"]"")
     .add("description", "Slim Colourful Design Electronic Cooking Appliance for ...")
     .add("image", "assets/img/0gmsnghhew.jpg")
-    .add("keywords", "[\"Foo\",\"Scales\",\"Weight\",\"Digital\",\"Kitchen\"]")
+    .add("keywords", ""["Foo","Scales","Weight","Digital","Kitchen"]"")
     .add("name", "Digital Kitchen Scales")
     .add("price", "14.99")
     .add("productid", "1000042")
-    .add("taxonomy", "[\"Home\",\"Kitchen\",\"Small Appliances\"]")
+    .add("taxonomy", ""["Home","Kitchen","Small Appliances"]"")
     .add("type", "product")
     .build();
 
@@ -2437,7 +2437,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Revisions model
     Revisions revisionsModel = new Revisions.Builder()
-    .ids(new ArrayList<String>(Arrays.asList("testString")))
+    .ids(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .start(Long.valueOf("1"))
     .build();
 
@@ -2450,14 +2450,14 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the Analyzer model
     Analyzer analyzerModel = new Analyzer.Builder()
     .name("classic")
-    .stopwords(new ArrayList<String>(Arrays.asList("testString")))
+    .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .build();
 
     // Construct an instance of the AnalyzerConfiguration model
     AnalyzerConfiguration analyzerConfigurationModel = new AnalyzerConfiguration.Builder()
     .name("classic")
-    .stopwords(new ArrayList<String>(Arrays.asList("testString")))
-    .fields(new HashMap<String, Analyzer>() { { put("foo", analyzerModel); } })
+    .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+    .fields(new java.util.HashMap<String, Analyzer>() { { put("foo", analyzerModel); } })
     .build();
 
     // Construct an instance of the SearchIndexDefinition model
@@ -2484,24 +2484,24 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the DesignDocument model
     DesignDocument designDocumentModel = new DesignDocument.Builder()
-    .attachments(new HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
-    .conflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .attachments(new java.util.HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
+    .conflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .deleted(true)
-    .deletedConflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .deletedConflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .id("testString")
     .localSeq("testString")
     .rev("testString")
     .revisions(revisionsModel)
-    .revsInfo(new ArrayList<DocumentRevisionStatus>(Arrays.asList(documentRevisionStatusModel)))
+    .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
     .autoupdate(true)
-    .filters(new HashMap<String, String>() { { put("foo", "testString"); } })
-    .indexes(new HashMap<String, SearchIndexDefinition>() { { put("foo", searchIndexDefinitionModel); } })
+    .filters(new java.util.HashMap<String, String>() { { put("foo", "testString"); } })
+    .indexes(new java.util.HashMap<String, SearchIndexDefinition>() { { put("foo", searchIndexDefinitionModel); } })
     .language("testString")
     .options(designDocumentOptionsModel)
-    .updates(new HashMap<String, String>() { { put("foo", "testString"); } })
-    .validateDocUpdate(new HashMap<String, String>() { { put("foo", "testString"); } })
-    .views(new HashMap<String, DesignDocumentViewsMapReduce>() { { put("foo", designDocumentViewsMapReduceModel); } })
-    .stIndexes(new HashMap<String, GeoIndexDefinition>() { { put("foo", geoIndexDefinitionModel); } })
+    .updates(new java.util.HashMap<String, String>() { { put("foo", "testString"); } })
+    .validateDocUpdate(new java.util.HashMap<String, String>() { { put("foo", "testString"); } })
+    .views(new java.util.HashMap<String, DesignDocumentViewsMapReduce>() { { put("foo", designDocumentViewsMapReduceModel); } })
+    .stIndexes(new java.util.HashMap<String, GeoIndexDefinition>() { { put("foo", geoIndexDefinitionModel); } })
     .add("foo", "testString")
     .build();
 
@@ -2629,7 +2629,7 @@ public class CloudantTest extends PowerMockTestCase {
     .updateSeq(true)
     .endkey("testString")
     .key("testString")
-    .keys(new ArrayList<String>(Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .startkey("0007741142412418284")
     .accept("application/json")
     .build();
@@ -2692,14 +2692,14 @@ public class CloudantTest extends PowerMockTestCase {
     .updateSeq(true)
     .endkey("testString")
     .key("testString")
-    .keys(new ArrayList<String>(Arrays.asList("small-appliances:1000042", "small-appliances:1000043")))
+    .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("small-appliances:1000042", "small-appliances:1000043")))
     .startkey("testString")
     .build();
 
     // Construct an instance of the PostDesignDocsQueriesOptions model
     PostDesignDocsQueriesOptions postDesignDocsQueriesOptionsModel = new PostDesignDocsQueriesOptions.Builder()
     .db("testString")
-    .queries(new ArrayList<AllDocsQuery>(Arrays.asList(allDocsQueryModel)))
+    .queries(new java.util.ArrayList<AllDocsQuery>(java.util.Arrays.asList(allDocsQueryModel)))
     .accept("application/json")
     .build();
 
@@ -2767,7 +2767,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new ArrayList<Object>(Arrays.asList("examplekey")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("examplekey")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -2839,7 +2839,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new ArrayList<Object>(Arrays.asList("examplekey")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("examplekey")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -2913,7 +2913,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new ArrayList<Object>(Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -2926,7 +2926,7 @@ public class CloudantTest extends PowerMockTestCase {
     .db("testString")
     .ddoc("testString")
     .view("testString")
-    .queries(new ArrayList<ViewQuery>(Arrays.asList(viewQueryModel)))
+    .queries(new java.util.ArrayList<ViewQuery>(java.util.Arrays.asList(viewQueryModel)))
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -2990,7 +2990,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new ArrayList<Object>(Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("testString")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -3003,7 +3003,7 @@ public class CloudantTest extends PowerMockTestCase {
     .db("testString")
     .ddoc("testString")
     .view("testString")
-    .queries(new ArrayList<ViewQuery>(Arrays.asList(viewQueryModel)))
+    .queries(new java.util.ArrayList<ViewQuery>(java.util.Arrays.asList(viewQueryModel)))
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -3122,7 +3122,7 @@ public class CloudantTest extends PowerMockTestCase {
     .updateSeq(true)
     .endkey("testString")
     .key("testString")
-    .keys(new ArrayList<String>(Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .startkey("0007741142412418284")
     .build();
 
@@ -3186,7 +3186,7 @@ public class CloudantTest extends PowerMockTestCase {
     .updateSeq(true)
     .endkey("testString")
     .key("testString")
-    .keys(new ArrayList<String>(Arrays.asList("testString")))
+    .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .startkey("0007741142412418284")
     .build();
 
@@ -3248,15 +3248,15 @@ public class CloudantTest extends PowerMockTestCase {
     .index("testString")
     .query("testString")
     .bookmark("testString")
-    .highlightFields(new ArrayList<String>(Arrays.asList("testString")))
+    .highlightFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .highlightNumber(Long.valueOf("1"))
     .highlightPostTag("testString")
     .highlightPreTag("testString")
     .highlightSize(Long.valueOf("1"))
     .includeDocs(true)
-    .includeFields(new ArrayList<String>(Arrays.asList("testString")))
+    .includeFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .limit(Long.valueOf("3"))
-    .sort(new ArrayList<String>(Arrays.asList("testString")))
+    .sort(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .stale("ok")
     .build();
 
@@ -3313,15 +3313,15 @@ public class CloudantTest extends PowerMockTestCase {
     .index("testString")
     .query("testString")
     .bookmark("testString")
-    .highlightFields(new ArrayList<String>(Arrays.asList("testString")))
+    .highlightFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .highlightNumber(Long.valueOf("1"))
     .highlightPostTag("testString")
     .highlightPreTag("testString")
     .highlightSize(Long.valueOf("1"))
     .includeDocs(true)
-    .includeFields(new ArrayList<String>(Arrays.asList("testString")))
+    .includeFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .limit(Long.valueOf("3"))
-    .sort(new ArrayList<String>(Arrays.asList("testString")))
+    .sort(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .stale("ok")
     .build();
 
@@ -3395,7 +3395,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new ArrayList<Object>(Arrays.asList("examplekey")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("examplekey")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -3468,7 +3468,7 @@ public class CloudantTest extends PowerMockTestCase {
     .group(true)
     .groupLevel(Long.valueOf("1"))
     .key("testString")
-    .keys(new ArrayList<Object>(Arrays.asList("examplekey")))
+    .keys(new java.util.ArrayList<Object>(java.util.Arrays.asList("examplekey")))
     .reduce(true)
     .stable(true)
     .startkey("testString")
@@ -3530,17 +3530,17 @@ public class CloudantTest extends PowerMockTestCase {
     PostPartitionFindOptions postPartitionFindOptionsModel = new PostPartitionFindOptions.Builder()
     .db("testString")
     .partitionKey("testString")
-    .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+    .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .bookmark("testString")
     .conflicts(true)
     .executionStats(true)
-    .fields(new ArrayList<String>(Arrays.asList("productid", "name", "description")))
+    .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("productid", "name", "description")))
     .limit(Long.valueOf("0"))
     .skip(Long.valueOf("0"))
-    .sort(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+    .sort(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
     .stable(true)
     .update("false")
-    .useIndex(new ArrayList<String>(Arrays.asList("testString")))
+    .useIndex(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -3592,17 +3592,17 @@ public class CloudantTest extends PowerMockTestCase {
     PostPartitionFindOptions postPartitionFindOptionsModel = new PostPartitionFindOptions.Builder()
     .db("testString")
     .partitionKey("testString")
-    .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+    .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .bookmark("testString")
     .conflicts(true)
     .executionStats(true)
-    .fields(new ArrayList<String>(Arrays.asList("productid", "name", "description")))
+    .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("productid", "name", "description")))
     .limit(Long.valueOf("0"))
     .skip(Long.valueOf("0"))
-    .sort(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+    .sort(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
     .stable(true)
     .update("false")
-    .useIndex(new ArrayList<String>(Arrays.asList("testString")))
+    .useIndex(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -3658,17 +3658,17 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostExplainOptions model
     PostExplainOptions postExplainOptionsModel = new PostExplainOptions.Builder()
     .db("testString")
-    .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+    .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .bookmark("testString")
     .conflicts(true)
     .executionStats(true)
-    .fields(new ArrayList<String>(Arrays.asList("testString")))
+    .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .limit(Long.valueOf("0"))
     .skip(Long.valueOf("0"))
-    .sort(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+    .sort(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
     .stable(true)
     .update("false")
-    .useIndex(new ArrayList<String>(Arrays.asList("testString")))
+    .useIndex(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .r(Long.valueOf("1"))
     .build();
 
@@ -3720,17 +3720,17 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostFindOptions model
     PostFindOptions postFindOptionsModel = new PostFindOptions.Builder()
     .db("testString")
-    .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+    .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .bookmark("testString")
     .conflicts(true)
     .executionStats(true)
-    .fields(new ArrayList<String>(Arrays.asList("_id", "type", "name", "email")))
+    .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("_id", "type", "name", "email")))
     .limit(Long.valueOf("3"))
     .skip(Long.valueOf("0"))
-    .sort(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+    .sort(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
     .stable(true)
     .update("false")
-    .useIndex(new ArrayList<String>(Arrays.asList("testString")))
+    .useIndex(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .r(Long.valueOf("1"))
     .build();
 
@@ -3782,17 +3782,17 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostFindOptions model
     PostFindOptions postFindOptionsModel = new PostFindOptions.Builder()
     .db("testString")
-    .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+    .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .bookmark("testString")
     .conflicts(true)
     .executionStats(true)
-    .fields(new ArrayList<String>(Arrays.asList("_id", "type", "name", "email")))
+    .fields(new java.util.ArrayList<String>(java.util.Arrays.asList("_id", "type", "name", "email")))
     .limit(Long.valueOf("3"))
     .skip(Long.valueOf("0"))
-    .sort(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+    .sort(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
     .stable(true)
     .update("false")
-    .useIndex(new ArrayList<String>(Arrays.asList("testString")))
+    .useIndex(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .r(Long.valueOf("1"))
     .build();
 
@@ -3899,7 +3899,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the Analyzer model
     Analyzer analyzerModel = new Analyzer.Builder()
     .name("classic")
-    .stopwords(new ArrayList<String>(Arrays.asList("testString")))
+    .stopwords(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .build();
 
     // Construct an instance of the IndexTextOperatorDefaultField model
@@ -3913,8 +3913,8 @@ public class CloudantTest extends PowerMockTestCase {
     .defaultAnalyzer(analyzerModel)
     .defaultField(indexTextOperatorDefaultFieldModel)
     .indexArrayLengths(true)
-    .partialFilterSelector(new HashMap<String, Object>() { { put("foo", "testString"); } })
-    .fields(new ArrayList<Map<String, String>>(Arrays.asList(new HashMap<String, String>() { { put("foo", "asc"); } })))
+    .partialFilterSelector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
+    .fields(new java.util.ArrayList<java.util.Map<String, String>>(java.util.Arrays.asList(new java.util.HashMap<String, String>() { { put("foo", "asc"); } })))
     .build();
 
     // Construct an instance of the IndexConfigurationJson model
@@ -4087,22 +4087,22 @@ public class CloudantTest extends PowerMockTestCase {
     .index("testString")
     .query("testString")
     .bookmark("testString")
-    .highlightFields(new ArrayList<String>(Arrays.asList("testString")))
+    .highlightFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .highlightNumber(Long.valueOf("1"))
     .highlightPostTag("testString")
     .highlightPreTag("testString")
     .highlightSize(Long.valueOf("1"))
     .includeDocs(true)
-    .includeFields(new ArrayList<String>(Arrays.asList("testString")))
+    .includeFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .limit(Long.valueOf("3"))
-    .sort(new ArrayList<String>(Arrays.asList("testString")))
+    .sort(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .stale("ok")
-    .counts(new ArrayList<String>(Arrays.asList("testString")))
-    .drilldown(new ArrayList<List<String>>(Arrays.asList(new ArrayList<String>(Arrays.asList("testString")))))
+    .counts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+    .drilldown(new java.util.ArrayList<List<String>>(java.util.Arrays.asList(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))))
     .groupField("testString")
     .groupLimit(Long.valueOf("1"))
-    .groupSort(new ArrayList<String>(Arrays.asList("testString")))
-    .ranges(new HashMap<String, Map<String, Map<String, String>>>() { { put("foo", new HashMap<String, Map<String, String>>() { { put("foo", new HashMap<String, String>() { { put("foo", "testString"); } }); } }); } })
+    .groupSort(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+    .ranges(new java.util.HashMap<String, Map<String, Map<String, String>>>() { { put("foo", new java.util.HashMap<String, Map<String, String>>() { { put("foo", new java.util.HashMap<String, String>() { { put("foo", "testString"); } }); } }); } })
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -4157,22 +4157,22 @@ public class CloudantTest extends PowerMockTestCase {
     .index("testString")
     .query("testString")
     .bookmark("testString")
-    .highlightFields(new ArrayList<String>(Arrays.asList("testString")))
+    .highlightFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .highlightNumber(Long.valueOf("1"))
     .highlightPostTag("testString")
     .highlightPreTag("testString")
     .highlightSize(Long.valueOf("1"))
     .includeDocs(true)
-    .includeFields(new ArrayList<String>(Arrays.asList("testString")))
+    .includeFields(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .limit(Long.valueOf("3"))
-    .sort(new ArrayList<String>(Arrays.asList("testString")))
+    .sort(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .stale("ok")
-    .counts(new ArrayList<String>(Arrays.asList("testString")))
-    .drilldown(new ArrayList<List<String>>(Arrays.asList(new ArrayList<String>(Arrays.asList("testString")))))
+    .counts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+    .drilldown(new java.util.ArrayList<List<String>>(java.util.Arrays.asList(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))))
     .groupField("testString")
     .groupLimit(Long.valueOf("1"))
-    .groupSort(new ArrayList<String>(Arrays.asList("testString")))
-    .ranges(new HashMap<String, Map<String, Map<String, String>>>() { { put("foo", new HashMap<String, Map<String, String>>() { { put("foo", new HashMap<String, String>() { { put("foo", "testString"); } }); } }); } })
+    .groupSort(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+    .ranges(new java.util.HashMap<String, Map<String, Map<String, String>>>() { { put("foo", new java.util.HashMap<String, Map<String, String>>() { { put("foo", new java.util.HashMap<String, String>() { { put("foo", "testString"); } }); } }); } })
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -4714,7 +4714,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Revisions model
     Revisions revisionsModel = new Revisions.Builder()
-    .ids(new ArrayList<String>(Arrays.asList("testString")))
+    .ids(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .start(Long.valueOf("1"))
     .build();
 
@@ -4744,7 +4744,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the ReplicationDatabase model
     ReplicationDatabase replicationDatabaseModel = new ReplicationDatabase.Builder()
     .auth(replicationDatabaseAuthModel)
-    .headers(new HashMap<String, String>() { { put("foo", "testString"); } })
+    .headers(new java.util.HashMap<String, String>() { { put("foo", "testString"); } })
     .url("testString")
     .build();
 
@@ -4752,32 +4752,32 @@ public class CloudantTest extends PowerMockTestCase {
     UserContext userContextModel = new UserContext.Builder()
     .db("testString")
     .name("testString")
-    .roles(new ArrayList<String>(Arrays.asList("_reader")))
+    .roles(new java.util.ArrayList<String>(java.util.Arrays.asList("_reader")))
     .build();
 
     // Construct an instance of the ReplicationDocument model
     ReplicationDocument replicationDocumentModel = new ReplicationDocument.Builder()
-    .attachments(new HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
-    .conflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .attachments(new java.util.HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
+    .conflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .deleted(true)
-    .deletedConflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .deletedConflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .id("testString")
     .localSeq("testString")
     .rev("testString")
     .revisions(revisionsModel)
-    .revsInfo(new ArrayList<DocumentRevisionStatus>(Arrays.asList(documentRevisionStatusModel)))
+    .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
     .cancel(true)
     .checkpointInterval(Long.valueOf("0"))
     .connectionTimeout(Long.valueOf("0"))
     .continuous(true)
     .createTarget(true)
     .createTargetParams(replicationCreateTargetParametersModel)
-    .docIds(new ArrayList<String>(Arrays.asList("testString")))
+    .docIds(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .filter("testString")
     .httpConnections(Long.valueOf("1"))
-    .queryParams(new HashMap<String, String>() { { put("foo", "testString"); } })
+    .queryParams(new java.util.HashMap<String, String>() { { put("foo", "testString"); } })
     .retriesPerRequest(Long.valueOf("0"))
-    .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+    .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .sinceSeq("testString")
     .socketOptions("testString")
     .source(replicationDatabaseModel)
@@ -4982,7 +4982,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Revisions model
     Revisions revisionsModel = new Revisions.Builder()
-    .ids(new ArrayList<String>(Arrays.asList("testString")))
+    .ids(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .start(Long.valueOf("1"))
     .build();
 
@@ -5012,7 +5012,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the ReplicationDatabase model
     ReplicationDatabase replicationDatabaseModel = new ReplicationDatabase.Builder()
     .auth(replicationDatabaseAuthModel)
-    .headers(new HashMap<String, String>() { { put("foo", "testString"); } })
+    .headers(new java.util.HashMap<String, String>() { { put("foo", "testString"); } })
     .url("https://examples.cloudant.com/animaldb")
     .build();
 
@@ -5020,32 +5020,32 @@ public class CloudantTest extends PowerMockTestCase {
     UserContext userContextModel = new UserContext.Builder()
     .db("testString")
     .name("john")
-    .roles(new ArrayList<String>(Arrays.asList("researcher")))
+    .roles(new java.util.ArrayList<String>(java.util.Arrays.asList("researcher")))
     .build();
 
     // Construct an instance of the ReplicationDocument model
     ReplicationDocument replicationDocumentModel = new ReplicationDocument.Builder()
-    .attachments(new HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
-    .conflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .attachments(new java.util.HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
+    .conflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .deleted(true)
-    .deletedConflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .deletedConflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .id("testString")
     .localSeq("testString")
     .rev("testString")
     .revisions(revisionsModel)
-    .revsInfo(new ArrayList<DocumentRevisionStatus>(Arrays.asList(documentRevisionStatusModel)))
+    .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
     .cancel(false)
     .checkpointInterval(Long.valueOf("4500"))
     .connectionTimeout(Long.valueOf("15000"))
     .continuous(true)
     .createTarget(true)
     .createTargetParams(replicationCreateTargetParametersModel)
-    .docIds(new ArrayList<String>(Arrays.asList("badger", "lemur", "llama")))
+    .docIds(new java.util.ArrayList<String>(java.util.Arrays.asList("badger", "lemur", "llama")))
     .filter("ddoc/my_filter")
     .httpConnections(Long.valueOf("10"))
-    .queryParams(new HashMap<String, String>() { { put("foo", "testString"); } })
+    .queryParams(new java.util.HashMap<String, String>() { { put("foo", "testString"); } })
     .retriesPerRequest(Long.valueOf("3"))
-    .selector(new HashMap<String, Object>() { { put("foo", "testString"); } })
+    .selector(new java.util.HashMap<String, Object>() { { put("foo", "testString"); } })
     .sinceSeq("34-g1AAAAGjeJzLYWBgYMlgTmGQT0lKzi9KdU")
     .socketOptions("[{keepalive, true}, {nodelay, false}]")
     .source(replicationDatabaseModel)
@@ -5121,7 +5121,7 @@ public class CloudantTest extends PowerMockTestCase {
     GetSchedulerDocsOptions getSchedulerDocsOptionsModel = new GetSchedulerDocsOptions.Builder()
     .limit(Long.valueOf("0"))
     .skip(Long.valueOf("0"))
-    .states(new ArrayList<String>(Arrays.asList("initializing")))
+    .states(new java.util.ArrayList<String>(java.util.Arrays.asList("initializing")))
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -5141,7 +5141,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Get query params
     assertEquals(Long.valueOf(query.get("limit")), Long.valueOf("0"));
     assertEquals(Long.valueOf(query.get("skip")), Long.valueOf("0"));
-    assertEquals(query.get("states"), RequestUtils.join(new ArrayList<String>(Arrays.asList("initializing")), ","));
+    assertEquals(query.get("states"), RequestUtils.join(new java.util.ArrayList<String>(java.util.Arrays.asList("initializing")), ","));
     // Check request path
     String parsedPath = TestUtilities.parseReqPath(request);
     assertEquals(parsedPath, getSchedulerDocsPath);
@@ -5389,8 +5389,8 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the SecurityObject model
     SecurityObject securityObjectModel = new SecurityObject.Builder()
-    .names(new ArrayList<String>(Arrays.asList("testString")))
-    .roles(new ArrayList<String>(Arrays.asList("testString")))
+    .names(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+    .roles(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .build();
 
     // Construct an instance of the PutSecurityOptions model
@@ -5398,7 +5398,7 @@ public class CloudantTest extends PowerMockTestCase {
     .db("testString")
     .admins(securityObjectModel)
     .members(securityObjectModel)
-    .cloudant(new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("_reader"))); } })
+    .cloudant(new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("_reader"))); } })
     .couchdbAuthOnly(true)
     .build();
 
@@ -5485,14 +5485,14 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the SecurityObject model
     SecurityObject securityObjectModel = new SecurityObject.Builder()
-    .names(new ArrayList<String>(Arrays.asList("testString")))
-    .roles(new ArrayList<String>(Arrays.asList("testString")))
+    .names(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
+    .roles(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .build();
 
     // Construct an instance of the PutCloudantSecurityConfigurationOptions model
     PutCloudantSecurityConfigurationOptions putCloudantSecurityConfigurationOptionsModel = new PutCloudantSecurityConfigurationOptions.Builder()
     .db("testString")
-    .cloudant(new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("_reader"))); } })
+    .cloudant(new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("_reader"))); } })
     .admins(securityObjectModel)
     .members(securityObjectModel)
     .couchdbAuthOnly(true)
@@ -5581,7 +5581,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the PutCorsConfigurationOptions model
     PutCorsConfigurationOptions putCorsConfigurationOptionsModel = new PutCorsConfigurationOptions.Builder()
-    .origins(new ArrayList<String>(Arrays.asList("testString")))
+    .origins(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .allowCredentials(true)
     .enableCors(true)
     .build();
@@ -6039,7 +6039,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Revisions model
     Revisions revisionsModel = new Revisions.Builder()
-    .ids(new ArrayList<String>(Arrays.asList("testString")))
+    .ids(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .start(Long.valueOf("1"))
     .build();
 
@@ -6051,24 +6051,24 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the Document model
     Document documentModel = new Document.Builder()
-    .attachments(new HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
-    .conflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .attachments(new java.util.HashMap<String, Attachment>() { { put("foo", attachmentModel); } })
+    .conflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .deleted(true)
-    .deletedConflicts(new ArrayList<String>(Arrays.asList("testString")))
+    .deletedConflicts(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
     .id("exampleid")
     .localSeq("testString")
     .rev("testString")
     .revisions(revisionsModel)
-    .revsInfo(new ArrayList<DocumentRevisionStatus>(Arrays.asList(documentRevisionStatusModel)))
+    .revsInfo(new java.util.ArrayList<DocumentRevisionStatus>(java.util.Arrays.asList(documentRevisionStatusModel)))
     .add("brand", "Foo")
-    .add("colours", "[\"red\",\"green\",\"black\",\"blue\"]")
+    .add("colours", ""["red","green","black","blue"]"")
     .add("description", "Slim Colourful Design Electronic Cooking Appliance for ...")
     .add("image", "assets/img/0gmsnghhew.jpg")
-    .add("keywords", "[\"Foo\",\"Scales\",\"Weight\",\"Digital\",\"Kitchen\"]")
+    .add("keywords", ""["Foo","Scales","Weight","Digital","Kitchen"]"")
     .add("name", "Digital Kitchen Scales")
     .add("price", "14.99")
     .add("productid", "1000042")
-    .add("taxonomy", "[\"Home\",\"Kitchen\",\"Small Appliances\"]")
+    .add("taxonomy", ""["Home","Kitchen","Small Appliances"]"")
     .add("type", "product")
     .build();
 
@@ -6130,7 +6130,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostMissingRevsOptions model
     PostMissingRevsOptions postMissingRevsOptionsModel = new PostMissingRevsOptions.Builder()
     .db("testString")
-    .documentRevisions(new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("testString"))); } })
+    .documentRevisions(new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("testString"))); } })
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -6181,7 +6181,7 @@ public class CloudantTest extends PowerMockTestCase {
     // Construct an instance of the PostRevsDiffOptions model
     PostRevsDiffOptions postRevsDiffOptionsModel = new PostRevsDiffOptions.Builder()
     .db("testString")
-    .documentRevisions(new HashMap<String, List<String>>() { { put("foo", new ArrayList<String>(Arrays.asList("testString"))); } })
+    .documentRevisions(new java.util.HashMap<String, List<String>>() { { put("foo", new java.util.ArrayList<String>(java.util.Arrays.asList("testString"))); } })
     .build();
 
     // Invoke operation with valid options model (positive test)
@@ -6476,7 +6476,7 @@ public class CloudantTest extends PowerMockTestCase {
 
     // Construct an instance of the PostActivityTrackerEventsOptions model
     PostActivityTrackerEventsOptions postActivityTrackerEventsOptionsModel = new PostActivityTrackerEventsOptions.Builder()
-    .types(new ArrayList<String>(Arrays.asList("management")))
+    .types(new java.util.ArrayList<String>(java.util.Arrays.asList("management")))
     .build();
 
     // Invoke operation with valid options model (positive test)

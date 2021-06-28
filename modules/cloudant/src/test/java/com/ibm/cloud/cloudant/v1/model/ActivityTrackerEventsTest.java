@@ -34,9 +34,9 @@ public class ActivityTrackerEventsTest {
   @Test
   public void testActivityTrackerEvents() throws Throwable {
     ActivityTrackerEvents activityTrackerEventsModel = new ActivityTrackerEvents.Builder()
-      .types(new ArrayList<String>(Arrays.asList("management")))
+      .types(new java.util.ArrayList<String>(java.util.Arrays.asList("management")))
       .build();
-    assertEquals(activityTrackerEventsModel.types(), new ArrayList<String>(Arrays.asList("management")));
+    assertEquals(activityTrackerEventsModel.types(), new java.util.ArrayList<String>(java.util.Arrays.asList("management")));
 
     String json = TestUtilities.serialize(activityTrackerEventsModel);
 

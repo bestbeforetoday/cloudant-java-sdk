@@ -46,7 +46,7 @@ public class PostAllDocsOptionsTest {
       .updateSeq(true)
       .endkey("testString")
       .key("testString")
-      .keys(new ArrayList<String>(Arrays.asList("testString")))
+      .keys(new java.util.ArrayList<String>(java.util.Arrays.asList("testString")))
       .startkey("testString")
       .build();
     assertEquals(postAllDocsOptionsModel.db(), "testString");
@@ -61,7 +61,7 @@ public class PostAllDocsOptionsTest {
     assertEquals(postAllDocsOptionsModel.updateSeq(), Boolean.valueOf(true));
     assertEquals(postAllDocsOptionsModel.endkey(), "testString");
     assertEquals(postAllDocsOptionsModel.key(), "testString");
-    assertEquals(postAllDocsOptionsModel.keys(), new ArrayList<String>(Arrays.asList("testString")));
+    assertEquals(postAllDocsOptionsModel.keys(), new java.util.ArrayList<String>(java.util.Arrays.asList("testString")));
     assertEquals(postAllDocsOptionsModel.startkey(), "testString");
   }
 

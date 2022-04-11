@@ -220,7 +220,7 @@ void defaultInit() {
 
   publishArtifactoryBuildInfo = {
     // create custom build name e.g. cloudant-sdks/cloudant-node-sdk/generated-branch
-    buildName = "cloudant-sdks" + "${env.JOB_NAME}".substring("${env.JOB_NAME}".indexOf('/'))
+    buildName = "${env.JOB_NAME}"
     buildType = 'GENERIC' // default, may be overridden
     customizePublishingInfo()
     withEnv(["LIB_NAME=${libName}",
